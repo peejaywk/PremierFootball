@@ -30,3 +30,10 @@ The main aims of the website are:
 * As the owner, I want display data in a clear and informative way that works on any platfrom.
 * As the owner, I want the ability to expand the website in the future to add more leagues from the UK and around the world.
 * As the owner, I want to minimise calls to the API to keep operating costs to a minimum.
+
+### Wireframe Mockups
+
+The website is split into two pages - Home and Contact. Initial design ideas were captured using [Balsamiq](https://balsamiq.com/) and they are linked below:
+
+* [Home Page](/assets/wireframes/HomePage.png)
+* [Contact Page](/assets/wireframes/ContactPage.png)
