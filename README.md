@@ -15,6 +15,8 @@ The main aims of the website are:
 
 [Features](#features)
 
+[Bugs / Features](#bugs)
+
 <a name="userexperience"></a>
 ## User Experience (UX)
 
@@ -77,3 +79,8 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
     * The contact form will be below the text and will ask for the users contact details and a description of their enquiry.
     * Below the form will be a submit button.
     * This page can  be accessed by clicking on the 'Contact' link in the footer.
+
+<a name="bugs"></a>
+## Bugs / Issues
+Code used to move the footer to the bottom of the screen (not fixed).
+[Stackoverflow](https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221)
