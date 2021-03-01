@@ -3,15 +3,28 @@
     text-transform: uppercase;
 }
 
-/* NavBar Items */
-.nav-section {
-    position: absolute;
+.inline-block {
+    display: inline-block;
 }
 
+/* NavBar Items */
+/* .nav-section {
+    position: absolute;
+} */
+
 /* Callout Items */
+.callout-section {
+    position: relative;
+}
 
 /* Premier League Info / Fixtures Table Items*/
+.league-fixture-section {
+    position: relative;
+}
 
 /* Premier Leagure Table Items */
+.leaguetable-section {
+    position: relative;
+}
 
 /* Footer Items */
