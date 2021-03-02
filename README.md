@@ -97,6 +97,7 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
 * [Font Awesome](https://fontawesome.com/) provided the social media icons and the icons for the concerts and set list sections.
 * [Googel Fonts](https://fonts.google.com/) provided the Roboto font that is used throughout this website.
 * [jQuery](https://jquery.com/). JavaScript library.
+* [](https://obfuscator.io/). Obfustcator for JavaScript
 
 <a name="testing"></a>
 ## Testing
