@@ -18,7 +18,6 @@ function getData(url, cb) {
     //ToDo: Add code to response to different ready states and status messages.
 
     const MY_API = myAPIKey();
-
     xhr.open("GET", "https://api-football-v1.p.rapidapi.com/" + url);
     xhr.setRequestHeader("x-rapidapi-key", MY_API);
     xhr.setRequestHeader("x-rapidapi-host", "api-football-v1.p.rapidapi.com");
@@ -47,14 +46,15 @@ function getCurrentLeagues(country) {
     if (timeNow >= dateLeagueRead + oneDay) {
         console.log('Data is stale so perform an API read.');
         const url = "v2/leagues/current/" + country;
+
         getData(url, function (data) {
             console.log(data);
             localStorage.setItem('leagueData', JSON.stringify(data));
-        });
+            localStorage.setItem('lastDateLeagueRead', timeNow);
+         });
     } else {
         console.log('Data is valid. No API call required.');
         data = JSON.parse(localStorage.getItem('leagueData'));
-        localStorage.setItem('lastDateLeagueRead', timeNow);
     }
     return data;
 }
@@ -90,5 +90,5 @@ $(document).ready(function () {
     
     $("#league-info").html(updateHomePage(leagueData));
 
-    console.log(leagueDataCountry);
+     console.log(leagueDataCountry);
 })
