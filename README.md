@@ -15,7 +15,15 @@ The main aims of the website are:
 
 [Features](#features)
 
-[Bugs / Features](#bugs)
+[Technologies Used](#technologies)
+
+[Testing](#testing)
+
+[Bugs / Issues](#bugs)
+
+[Deployment](#deployment)
+
+[Credits](#credits)
 
 <a name="userexperience"></a>
 ## User Experience (UX)
@@ -80,7 +88,26 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
     * Below the form will be a submit button.
     * This page can  be accessed by clicking on the 'Contact' link in the footer.
 
+<a name="technologies"></a>
+## Technologies Used
+* This website uses HTML and CSS programming languages.
+* [Bootstrap 5.0.0 beta2](https://getbootstrap.com/)
+* [GitPod](https://gitpod.io/) was use as the development environment.
+* [GitHub](https://github.com/) was used for configuration control and to host the website.
+* [Font Awesome](https://fontawesome.com/) provided the social media icons and the icons for the concerts and set list sections.
+* [Googel Fonts](https://fonts.google.com/) provided the Roboto font that is used throughout this website.
+* [jQuery](https://jquery.com/). JavaScript library.
+
+<a name="testing"></a>
+## Testing
+
 <a name="bugs"></a>
 ## Bugs / Issues
 Code used to move the footer to the bottom of the screen (not fixed).
 [Stackoverflow](https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221)
+
+<a name="deployment"></a>
+## Deployment
+
+<a name="credits"></a>
+## Credits
