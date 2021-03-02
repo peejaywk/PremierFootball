@@ -110,4 +110,5 @@ Code used to move the footer to the bottom of the screen (not fixed).
 ## Deployment
 
 <a name="credits"></a>
-## Credits
+## Credits / Resources
+https://www.w3schools.com/js/default.asp

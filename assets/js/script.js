@@ -19,11 +19,8 @@ function getData(url, cb) {
     xhr.send(data);
 }
 
-
-
-
-// Execute the function once the DOM is ready.
-$(document).ready(function () {
+function getCurrentLeagues(country) {
+    var data = null;
     // To minimise API calls the league data is only read once per day or when no data has been read (new browser/user)
     // Read back the time the API was last read to fetch the league information
     var dateLeagueRead = 0;
@@ -42,25 +39,42 @@ $(document).ready(function () {
 
     if (timeNow >= dateLeagueRead + oneDay) {
         console.log('Data is stale so perform an API read.');
+        const url = "v2/leagues/current/" + country;
+        getData(url, function (data) {
+            console.log(data);
+            localStorage.setItem('leagueData', JSON.stringify(data));
+        });
     } else {
         console.log('Data is valid. No API call required.');
+        data = JSON.parse(localStorage.getItem('leagueData'));
+        localStorage.setItem('lastDateLeagueRead', timeNow);
     }
 
-    // const url = "v2/leagues/current/england";
-    // var data = null;
-    // getData(url, function(data) {
-    //     console.log(data);
-    //     localStorage.setItem('leagueData',JSON.stringify(data));
-    // });
-    localStorage.setItem('lastDateLeagueRead', timeNow);
+    return data;
+}
 
-    var retrievedData = JSON.parse(localStorage.getItem('leagueData'));
-    console.log(retrievedData);
-    $.each(retrievedData.api.leagues, function (index, value) {
-        if (value.name == "Premier League") {
-            console.log(index + ": " + value.name);
-            console.log(index + ": " + value.league_id);
-            return false;
+// Function to search 'data' for a league named 'leagueName'.
+// Returns the league ID if found, otherwise will return null.
+function getLeagueID(data, leagueName) {
+    var league_id = null;
+    $.each(data.api.leagues, function (index, value) {
+        if (value.name == leagueName) {
+             league_id = value.league_id;
         }
     });
+    return league_id;
+}
+
+// Execute the function once the DOM is ready.
+$(document).ready(function () {
+
+    // Get a list of the current active leagues in England
+    var retrievedData = getCurrentLeagues('england');
+    
+    // Find the league ID for the Premiership
+    var leagueID = getLeagueID(retrievedData, 'Premier League');
+
+    console.log(retrievedData);
+    console.log('League ID: ' + leagueID);
+
 })
