@@ -3,65 +3,45 @@ var _0x17d6 = ['9811CaACaI', '1323116hMGSjL', '581741oujLdu', '460783NcTkWs', '3
 
 
 // Example code to read the API-FOOTBALL API copied from https://rapidapi.com/api-sports/api/api-football/endpoints
-// Modified to add a custum URL.
-function getData(url, cb) {
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-    const data = null;
-
-    // Wait for the request to finish and for the 'OK' status.
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText));
-        }
-    };
-    //ToDo: Add code to response to different ready states and status messages.
-
-    const MY_API = myAPIKey();
-    xhr.open("GET", "https://api-football-v1.p.rapidapi.com/" + url);
-    xhr.setRequestHeader("x-rapidapi-key", MY_API);
-    xhr.setRequestHeader("x-rapidapi-host", "api-football-v1.p.rapidapi.com");
-
-    xhr.send(data);
-}
-
-function getCurrentLeagues(country) {
-    var data = null;
-    // To minimise API calls the league data is only read once per day or when no data has been read (new browser/user)
-    // Read back the time the API was last read to fetch the league information
-    var dateLeagueRead = 0;
-    if (localStorage.getItem('lastDateLeagueRead') != null) {
-        dateLeagueRead = localStorage.getItem('lastDateLeagueRead');
-    }
-
+// Modified to add a custum URL and to only read data once per day.
+async function getData(url) {
     // Get current time
     var timeNow = new Date().getTime();
 
     // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
-    var oneDay = 1 * 24 * 60 * 1000;
+    var oneDay = 1 * 24 * 60 * 60 * 1000;
 
-    console.log('Time Now ' + timeNow);
-    console.log('Data Read ' + dateLeagueRead);
+    var timeDataLastRead = 0;
+    if (localStorage.getItem('timeDataLastRead') != null) {
+        timeDataLastRead = localStorage.getItem('timeDataLastRead');
+    }
 
-    if (timeNow >= dateLeagueRead + oneDay) {
+    if (timeNow >= parseInt(timeDataLastRead) + parseInt(oneDay)) {
+        const MY_API = myAPIKey();
         console.log('Data is stale so perform an API read.');
-        const url = "v2/leagues/current/" + country;
+        let response = await fetch("https://api-football-v1.p.rapidapi.com/" + url, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": `${MY_API}`,
+                "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+            }
+        });
 
-        getData(url, function (data) {
-            console.log(data);
-            localStorage.setItem('leagueData', JSON.stringify(data));
-            localStorage.setItem('lastDateLeagueRead', timeNow);
-         });
+        let data = await response.json();
+        localStorage.setItem('covidData', JSON.stringify(data));
+        localStorage.setItem('timeDataLastRead', timeNow);
+        return data;
     } else {
         console.log('Data is valid. No API call required.');
-        data = JSON.parse(localStorage.getItem('leagueData'));
+        let response = await JSON.parse(localStorage.getItem('covidData'));
+        let data = await response;
+        return data;
     }
-    return data;
 }
 
 // Function to search 'data' for a league named 'leagueName'.
 // Returns the league data if found, otherwise will return null.
-function getLeagueID(data, leagueName) {
+function getLeagueData(data, leagueName) {
     var leagueData = null;
     $.each(data.api.leagues, function (index, value) {
         if (value.name == leagueName) {
@@ -83,12 +63,13 @@ function updateHomePage(leagueData) {
 // Execute the function once the DOM is ready.
 $(document).ready(function () {
     // Get a list of the current active leagues in England
-    var leagueDataCountry = getCurrentLeagues('england');
+    const country = 'england';
+    const url = "v2/leagues/current/" + country;
+    getData(url).then(data => {
+        // Find the league data for the Premiership
+        var leagueData = getLeagueData(data, 'Premier League');
+        console.log(leagueData);
 
-    // Find the league ID for the Premiership
-    var leagueData = getLeagueID(leagueDataCountry, 'Premier League');
-    
-    $("#league-info").html(updateHomePage(leagueData));
-
-     console.log(leagueDataCountry);
+        $("#league-info").html(updateHomePage(leagueData));
+    });
 })
