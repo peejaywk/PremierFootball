@@ -57,6 +57,21 @@ function updateHomePage(leagueData) {
     `
 }
 
+// Create a table containing the upcoming fixtures.
+function updateFixturesTable(fixtureList) {
+    var fixtureTable = `<table>`;
+    $.each(fixtureList.api.fixtures, function(index, value) {
+        var fixtureDate = new Date(value.event_date);
+        const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+        
+        fixtureTable += `<tr><td>${fixtureDate.toLocaleDateString('en-GB', options)}</td><td>${value.homeTeam.team_name}</td><td>${value.awayTeam.team_name}</td></tr>`
+    });
+    fixtureTable += `</table>`;
+    
+    
+    return fixtureTable;
+}
+
 // Execute the function once the DOM is ready.
 $(document).ready(function () {
     // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
@@ -77,6 +92,7 @@ $(document).ready(function () {
         var url = "v2/fixtures/league/" + league_id + "/next/10?timezone=Europe%2FLondon";
         getData(url, 'fixtures', oneDay).then(data => {
             console.log(data);
+            $("#fixtures-table").html(updateFixturesTable(data));
         });
     });
 })
