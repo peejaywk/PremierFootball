@@ -4,19 +4,16 @@ var _0x17d6 = ['9811CaACaI', '1323116hMGSjL', '581741oujLdu', '460783NcTkWs', '3
 
 // Example code to read the API-FOOTBALL API copied from https://rapidapi.com/api-sports/api/api-football/endpoints
 // Modified to add a custum URL and to only read data once per day.
-async function getData(url) {
+async function getData(url, store_id, frequency) {
     // Get current time
     var timeNow = new Date().getTime();
 
-    // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
-    var oneDay = 1 * 24 * 60 * 60 * 1000;
-
     var timeDataLastRead = 0;
-    if (localStorage.getItem('timeDataLastRead') != null) {
-        timeDataLastRead = localStorage.getItem('timeDataLastRead');
+    if (localStorage.getItem('timeDataLastRead'+store_id) != null) {
+        timeDataLastRead = localStorage.getItem('timeDataLastRead'+store_id);
     }
 
-    if (timeNow >= parseInt(timeDataLastRead) + parseInt(oneDay)) {
+    if (timeNow >= parseInt(timeDataLastRead) + parseInt(frequency)) {
         const MY_API = myAPIKey();
         console.log('Data is stale so perform an API read.');
         let response = await fetch("https://api-football-v1.p.rapidapi.com/" + url, {
@@ -28,12 +25,12 @@ async function getData(url) {
         });
 
         let data = await response.json();
-        localStorage.setItem('covidData', JSON.stringify(data));
-        localStorage.setItem('timeDataLastRead', timeNow);
+        localStorage.setItem('localData'+store_id, JSON.stringify(data));
+        localStorage.setItem('timeDataLastRead'+store_id, timeNow);
         return data;
     } else {
         console.log('Data is valid. No API call required.');
-        let response = await JSON.parse(localStorage.getItem('covidData'));
+        let response = await JSON.parse(localStorage.getItem('localData'+store_id));
         let data = await response;
         return data;
     }
@@ -62,23 +59,24 @@ function updateHomePage(leagueData) {
 
 // Execute the function once the DOM is ready.
 $(document).ready(function () {
+    // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
+    var oneDay = 1 * 24 * 60 * 60 * 1000;
+
     // Get a list of the current active leagues in England
     const country = 'england';
     var url = "v2/leagues/current/" + country;
-    getData(url).then(data => {
+    getData(url, 'league', oneDay).then(data => {
         // Find the league data for the Premiership
         var leagueData = getLeagueData(data, 'Premier League');
         console.log(leagueData);
 
         $("#league-info").html(updateHomePage(leagueData));
 
-        //fixtures/league/524/next/10?timezone=Europe%2FLondon"
         return leagueData.league_id;
-    }).then(leagueData => {
-        var url = "v2/fixtures/league/" + leagueData + "next/10?timezone=Europe%2FLondon";
-        getData(url).then(data => {
+    }).then(league_id => {
+        var url = "v2/fixtures/league/" + league_id + "/next/10?timezone=Europe%2FLondon";
+        getData(url, 'fixtures', oneDay).then(data => {
             console.log(data);
-            console.log("here");
         });
     });
 })
