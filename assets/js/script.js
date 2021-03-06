@@ -85,9 +85,23 @@ function updateFixturesTable(fixtureList) {
         </tr>`
     });
     fixtureTable += `</table>`;
-
-
     return fixtureTable;
+}
+
+function updateLeagueTable(leagueTableData){
+    var leagueTable = `<table>`;
+    $.each(leagueTableData.api.standings[0], function (index, value) {
+        leagueTable += `
+        <tr>
+            <td>${value.rank}</td>
+            <td><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
+            <td>${value.teamName}</td>
+            <td>${value.points}</td>
+        </tr>`
+    });
+
+    leagueTable += `</table>`;
+    return leagueTable;
 }
 
 // Execute the function once the DOM is ready.
@@ -112,5 +126,11 @@ $(document).ready(function () {
             console.log(data);
             $("#fixtures-table").html(updateFixturesTable(data));
         });
+        var url = "v2/leagueTable/" + league_id;
+        getData(url, 'table', oneDay).then(data => {
+            console.log(data);
+            $("#league-table").html(updateLeagueTable(data));
+        });
     });
 })
+
