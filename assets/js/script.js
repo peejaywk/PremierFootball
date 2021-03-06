@@ -64,12 +64,21 @@ function updateHomePage(leagueData) {
 $(document).ready(function () {
     // Get a list of the current active leagues in England
     const country = 'england';
-    const url = "v2/leagues/current/" + country;
+    var url = "v2/leagues/current/" + country;
     getData(url).then(data => {
         // Find the league data for the Premiership
         var leagueData = getLeagueData(data, 'Premier League');
         console.log(leagueData);
 
         $("#league-info").html(updateHomePage(leagueData));
+
+        //fixtures/league/524/next/10?timezone=Europe%2FLondon"
+        return leagueData.league_id;
+    }).then(leagueData => {
+        var url = "v2/fixtures/league/" + leagueData + "next/10?timezone=Europe%2FLondon";
+        getData(url).then(data => {
+            console.log(data);
+            console.log("here");
+        });
     });
 })
