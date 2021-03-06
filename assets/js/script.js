@@ -9,8 +9,8 @@ async function getData(url, store_id, frequency) {
     var timeNow = new Date().getTime();
 
     var timeDataLastRead = 0;
-    if (localStorage.getItem('timeDataLastRead'+store_id) != null) {
-        timeDataLastRead = localStorage.getItem('timeDataLastRead'+store_id);
+    if (localStorage.getItem('timeDataLastRead' + store_id) != null) {
+        timeDataLastRead = localStorage.getItem('timeDataLastRead' + store_id);
     }
 
     if (timeNow >= parseInt(timeDataLastRead) + parseInt(frequency)) {
@@ -25,12 +25,12 @@ async function getData(url, store_id, frequency) {
         });
 
         let data = await response.json();
-        localStorage.setItem('localData'+store_id, JSON.stringify(data));
-        localStorage.setItem('timeDataLastRead'+store_id, timeNow);
+        localStorage.setItem('localData' + store_id, JSON.stringify(data));
+        localStorage.setItem('timeDataLastRead' + store_id, timeNow);
         return data;
     } else {
         console.log('Data is valid. No API call required.');
-        let response = await JSON.parse(localStorage.getItem('localData'+store_id));
+        let response = await JSON.parse(localStorage.getItem('localData' + store_id));
         let data = await response;
         return data;
     }
@@ -60,15 +60,33 @@ function updateHomePage(leagueData) {
 // Create a table containing the upcoming fixtures.
 function updateFixturesTable(fixtureList) {
     var fixtureTable = `<table>`;
-    $.each(fixtureList.api.fixtures, function(index, value) {
+    fixtureTable += `
+    <tr>
+        <td>Date</td>
+        <td></td>
+        <td>Home Team</td>
+        <td></td>
+        <td>Away Team</td>
+        <td>Kickoff</td>
+    </tr>`
+
+    $.each(fixtureList.api.fixtures, function (index, value) {
         var fixtureDate = new Date(value.event_date);
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
-        
-        fixtureTable += `<tr><td>${fixtureDate.toLocaleDateString('en-GB', options)}</td><td>${value.homeTeam.team_name}</td><td>${value.awayTeam.team_name}</td></tr>`
+
+        fixtureTable += `
+        <tr>
+            <td>${fixtureDate.toLocaleDateString('en-GB', options)}</td>
+            <td><img src="${value.homeTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
+            <td>${value.homeTeam.team_name}</td>
+            <td><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
+            <td>${value.awayTeam.team_name}</td>
+            <td>${fixtureDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</td>
+        </tr>`
     });
     fixtureTable += `</table>`;
-    
-    
+
+
     return fixtureTable;
 }
 
