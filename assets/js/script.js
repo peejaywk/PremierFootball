@@ -71,7 +71,7 @@ function updateFixturesTable(fixtureList) {
         <td>Away Team</td>
         <td>Kickoff</td>
     </tr>`
-
+ 
     $.each(fixtureList.api.fixtures, function (index, value) {
         var fixtureDate = new Date(value.event_date);
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
@@ -80,10 +80,10 @@ function updateFixturesTable(fixtureList) {
         <tr class="table-text">
             <td>${fixtureDate.toLocaleDateString('en-GB', options)}</td>
             <td><img src="${value.homeTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td>${value.homeTeam.team_name}</td>
+            <td><a href="team.html?team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
             <td><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td>${value.awayTeam.team_name}</td>
-            <td>${fixtureDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</td>
+            <td><a href="team.html?team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
+             <td>${fixtureDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</td>
         </tr>`
     });
     fixtureTable += `</table>`;
@@ -135,7 +135,7 @@ function updateLeagueTable(leagueTableData) {
         <tr class="table-text">
             <td>${value.rank}</td>
             <td><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td>${value.teamName}</td>
+            <td><a href="team.html?team_id=${value.team_id}">${value.teamName}</a></td>
             <td>${value.all.matchsPlayed}</td>
             <td>${formList}</td>
             <td>${value.all.win}</td>
