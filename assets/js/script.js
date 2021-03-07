@@ -3,16 +3,19 @@ var _0x17d6 = ['9811CaACaI', '1323116hMGSjL', '581741oujLdu', '460783NcTkWs', '3
 
 
 // Example code to read the API-FOOTBALL API copied from https://rapidapi.com/api-sports/api/api-football/endpoints
-// Modified to add a custum URL and to only read data once per day.
+// Modified to add a custom URL and to store the data locally to reduce the number of calls to the API.
+// The data will be updated depending on the value of the 'frequency' term passed in.
 async function getData(url, store_id, frequency) {
     // Get current time
     var timeNow = new Date().getTime();
 
+    // Retrieve the time that the requested data was last read
     var timeDataLastRead = 0;
     if (localStorage.getItem('timeDataLastRead' + store_id) != null) {
         timeDataLastRead = localStorage.getItem('timeDataLastRead' + store_id);
     }
 
+    // If the data has expired the read the API - else retrieve from local storage
     if (timeNow >= parseInt(timeDataLastRead) + parseInt(frequency)) {
         const MY_API = myAPIKey();
         console.log('Data is stale so perform an API read.');
@@ -87,6 +90,17 @@ function updateFixturesTable(fixtureList) {
     return fixtureTable;
 }
 
+function createFormList (formString) {
+    var formList = `<ul>`;
+    for (var i=0; i<formString.length; i++) {
+        formList += `
+            <li class="form-li">${formString[i]}</li>
+        `
+    }
+    formList += `</ul>`;
+    return formList;
+}
+
 function updateLeagueTable(leagueTableData){
     var leagueTable = `<table>`;
     leagueTable += `
@@ -106,13 +120,14 @@ function updateLeagueTable(leagueTableData){
     </tr>`
     
     $.each(leagueTableData.api.standings[0], function (index, value) {
+        var formList = createFormList(value.forme);
         leagueTable += `
         <tr class="table-text">
             <td>${value.rank}</td>
             <td><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td>${value.teamName}</td>
             <td>${value.all.matchsPlayed}</td>
-            <td>${value.forme}</td>
+            <td>${formList}</td>
             <td>${value.all.win}</td>
             <td>${value.all.draw}</td>
             <td>${value.all.lose}</td>

@@ -40,6 +40,10 @@ body {
     position: relative;
 }
 
+.form-li {
+    display: inline;
+}
+
 /* Footer Items */
 .footer-section {
   /* position: absolute; */
