@@ -1,6 +1,7 @@
 /* Generic Sytles */
 body {
-  min-height: 100vh;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 .content {
@@ -13,6 +14,10 @@ body {
 
 .inline-block {
     display: inline-block;
+}
+
+.table-text {
+    font-weight: 300;
 }
 
 /* NavBar Items */
@@ -37,7 +42,7 @@ body {
 
 /* Footer Items */
 .footer-section {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   background-color: #f5f5f5;

@@ -50,7 +50,6 @@ function getLeagueData(data, leagueName) {
 
 function updateHomePage(leagueData) {
     return `
-        <p>${leagueData.name}</p>
         <img src="${leagueData.logo}" width="80" height="80" alt="League Logo">
         <p>Season Start: ${leagueData.season_start}</p>
         <p>Season End: ${leagueData.season_end}</p>
@@ -75,7 +74,7 @@ function updateFixturesTable(fixtureList) {
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
 
         fixtureTable += `
-        <tr>
+        <tr class="table-text">
             <td>${fixtureDate.toLocaleDateString('en-GB', options)}</td>
             <td><img src="${value.homeTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td>${value.homeTeam.team_name}</td>
@@ -90,12 +89,36 @@ function updateFixturesTable(fixtureList) {
 
 function updateLeagueTable(leagueTableData){
     var leagueTable = `<table>`;
+    leagueTable += `
+    <tr>
+        <td>Position</td>
+        <td></td>
+        <td>Team Name</td>
+        <td>Played</td>
+        <td>Form</td>
+        <td>Won</td>
+        <td>Drawn</td>
+        <td>Lost</td>
+        <td>For</td>
+        <td>Against</td>
+        <td>GD</td>
+        <td>Points</td>
+    </tr>`
+    
     $.each(leagueTableData.api.standings[0], function (index, value) {
         leagueTable += `
-        <tr>
+        <tr class="table-text">
             <td>${value.rank}</td>
             <td><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td>${value.teamName}</td>
+            <td>${value.all.matchsPlayed}</td>
+            <td>${value.forme}</td>
+            <td>${value.all.win}</td>
+            <td>${value.all.draw}</td>
+            <td>${value.all.lose}</td>
+            <td>${value.all.goalsFor}</td>
+            <td>${value.all.goalsAgainst}</td>
+            <td>${value.goalsDiff}</td>
             <td>${value.points}</td>
         </tr>`
     });
