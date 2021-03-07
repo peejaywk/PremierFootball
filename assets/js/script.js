@@ -53,7 +53,7 @@ function getLeagueData(data, leagueName) {
 
 function updateHomePage(leagueData) {
     return `
-        <img src="${leagueData.logo}" width="80" height="80" alt="League Logo">
+        <img src="${leagueData.logo}" min-width="80" min-height="80" alt="League Logo">
         <p>Season Start: ${leagueData.season_start}</p>
         <p>Season End: ${leagueData.season_end}</p>
     `
@@ -61,7 +61,7 @@ function updateHomePage(leagueData) {
 
 // Create a table containing the upcoming fixtures.
 function updateFixturesTable(fixtureList) {
-    var fixtureTable = `<table>`;
+    var fixtureTable = `<table class="fixture-table">`;
     fixtureTable += `
     <tr>
         <td>Date</td>
@@ -112,7 +112,7 @@ function createFormList(formString) {
 }
 
 function updateLeagueTable(leagueTableData) {
-    var leagueTable = `<table>`;
+    var leagueTable = `<table class="league-table">`;
     leagueTable += `
     <tr>
         <td>Position</td>

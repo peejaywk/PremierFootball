@@ -21,6 +21,14 @@ body {
     vertical-align: middle;
 }
 
+tr:nth-child(even) {
+    background: #FFF
+}
+
+tr:nth-child(odd) {
+    background: #CCC
+}
+
 /* NavBar Items */
 .nav-section {
     background-color: #f5f5f5;
@@ -36,9 +44,18 @@ body {
     position: relative;
 }
 
+.fixture-table {
+    width: 100%;
+}
+
+
 /* Premier Leagure Table Items */
 .leaguetable-section {
     position: relative;
+}
+
+.league-table {
+    width: 100%;
 }
 
 .form-ul {
