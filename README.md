@@ -115,3 +115,5 @@ Code used to move the footer to the bottom of the screen (not fixed).
 * [W3Schools JavaScript](https://www.w3schools.com/js/default.asp)
 * [Chaining together API calls](https://gomakethings.com/how-to-use-the-fetch-method-to-make-multiple-api-calls-with-vanilla-javascript/)
 * [Working with date objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+https://www.sitepoint.com/get-url-parameters-with-javascript/
