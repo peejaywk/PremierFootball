@@ -90,18 +90,28 @@ function updateFixturesTable(fixtureList) {
     return fixtureTable;
 }
 
-function createFormList (formString) {
-    var formList = `<ul>`;
-    for (var i=0; i<formString.length; i++) {
-        formList += `
-            <li class="form-li">${formString[i]}</li>
-        `
+function createFormList(formString) {
+    var formList = `<ul class="form-ul">`;
+    for (var i = 0; i < formString.length; i++) {
+        if (formString[i] == 'W' || formString[i] == 'w') {
+            formList += `
+                <li class="form-li form-li-won">${formString[i]}</li>
+            `
+        } else if (formString[i] == 'L' || formString[i] == 'l'){
+            formList += `
+                <li class="form-li form-li-lost">${formString[i]}</li>
+            `
+        } else {
+            formList += `
+                <li class="form-li form-li-draw">${formString[i]}</li>
+            `
+        }
     }
     formList += `</ul>`;
     return formList;
 }
 
-function updateLeagueTable(leagueTableData){
+function updateLeagueTable(leagueTableData) {
     var leagueTable = `<table>`;
     leagueTable += `
     <tr>
@@ -118,7 +128,7 @@ function updateLeagueTable(leagueTableData){
         <td>GD</td>
         <td>Points</td>
     </tr>`
-    
+
     $.each(leagueTableData.api.standings[0], function (index, value) {
         var formList = createFormList(value.forme);
         leagueTable += `
