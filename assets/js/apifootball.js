@@ -14,7 +14,7 @@ async function getData(url, store_id, frequency) {
     if (localStorage.getItem('timeDataLastRead' + store_id) != null) {
         timeDataLastRead = localStorage.getItem('timeDataLastRead' + store_id);
     }
-
+    
     // If the data has expired the read the API - else retrieve from local storage
     if (timeNow >= parseInt(timeDataLastRead) + parseInt(frequency)) {
         const MY_API = myAPIKey();
