@@ -31,11 +31,11 @@ function updateResultsTable(resultsData) {
         <tr class="table-text">
             <td>${fixtureDate.toLocaleDateString('en-GB', options)}</td>
             <td><img src="${value.homeTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td><a href="team.html?team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
+            <td><a href="team.html?league_id=${value.league_id}&team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
             <td>${value.goalsHomeTeam}</td>
             <td>${value.goalsAwayTeam}</td>
             <td><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td><a href="team.html?team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
+            <td><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
         </tr>`
     });
     resultsTable += `</table>`;
@@ -62,9 +62,9 @@ function updateTeamFixturesTable(teamFixturesData) {
         <tr class="table-text">
             <td>${fixtureDate.toLocaleDateString('en-GB', options)}</td>
             <td><img src="${value.homeTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td><a href="team.html?team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
+            <td><a href="team.html?league_id=${value.league_id}&team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
             <td><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td><a href="team.html?team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
+            <td><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
              <td>${fixtureDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</td>
         </tr>`
     });

@@ -1,7 +1,12 @@
-/* Generic Sytles */
+/*---------- Generic Sytles ----------*/
 body {
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
+    background-color: #EBE7EE;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 .content {
@@ -22,24 +27,32 @@ body {
 }
 
 tr:nth-child(even) {
-    background: #FFF
+    background: #E3DEE7;
 }
 
 tr:nth-child(odd) {
-    background: #CCC
+    background: #C7BDD0;
 }
 
-/* NavBar Items */
+/*---------- NavBar Items ----------*/
 .nav-section {
-    background-color: #f5f5f5;
+    background-color: #583973;
 }
 
-/* Callout Items */
+.navbar-light .navbar-brand {
+    color: #EBE7EE;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #EBE7EE;
+}
+
+/*---------- Callout Items ----------*/
 .callout-section {
     position: relative;
 }
 
-/* Premier League Info / Fixtures Table Items*/
+/*---------- Premier League Info / Fixtures Table Items ----------*/
 .league-fixture-section {
     position: relative;
 }
@@ -49,7 +62,7 @@ tr:nth-child(odd) {
 }
 
 
-/* Premier Leagure Table Items */
+/*---------- Premier Leagure Table Items ----------*/
 .leaguetable-section {
     position: relative;
 }
@@ -63,11 +76,11 @@ tr:nth-child(odd) {
 }
 
 .form-li-won {
-    background-color: green;
+    background-color: #365C18;
 }
 
 .form-li-lost {
-    background-color: red;
+    background-color: #E2062C;
 }
 
 .form-li-draw {
@@ -85,10 +98,23 @@ tr:nth-child(odd) {
     border-radius: 2px;
 }
 
-/* Footer Items */
+/*---------- Footer Items ----------*/
 .footer-section {
-  /* position: absolute; */
-  bottom: 0;
-  width: 100%;
-  background-color: #f5f5f5;
+    color: #EBE7EE;
+    bottom: 0;
+    width: 100%;
+    background-color: #583973;
+}
+
+.email-link {
+    color: #EBE7EE;
+}
+
+.email-link:hover {
+    color: #D8D0DE;
+    text-decoration: none;
+}
+
+.social-media-link i{
+    color: #EBE7EE;
 }
