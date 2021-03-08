@@ -38,3 +38,65 @@ async function getData(url, store_id, frequency) {
         return data;
     }
 }
+
+function createFormList(formString) {
+    var formList = `<ul class="form-ul">`;
+    for (var i = 0; i < formString.length; i++) {
+        if (formString[i] == 'W' || formString[i] == 'w') {
+            formList += `
+                <li class="form-li form-li-won">${formString[i]}</li>
+            `
+        } else if (formString[i] == 'L' || formString[i] == 'l'){
+            formList += `
+                <li class="form-li form-li-lost">${formString[i]}</li>
+            `
+        } else {
+            formList += `
+                <li class="form-li form-li-draw">${formString[i]}</li>
+            `
+        }
+    }
+    formList += `</ul>`;
+    return formList;
+}
+
+function updateLeagueTable(leagueTableData, league_id) {
+    var leagueTable = `<table class="league-table">`;
+    leagueTable += `
+    <tr>
+        <td>Position</td>
+        <td></td>
+        <td>Team Name</td>
+        <td>Played</td>
+        <td>Form</td>
+        <td>Won</td>
+        <td>Drawn</td>
+        <td>Lost</td>
+        <td>For</td>
+        <td>Against</td>
+        <td>GD</td>
+        <td>Points</td>
+    </tr>`
+
+    $.each(leagueTableData.api.standings[0], function (index, value) {
+        var formList = createFormList(value.forme);
+        leagueTable += `
+        <tr class="table-text">
+            <td>${value.rank}</td>
+            <td><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
+            <td><a href="team.html?league_id=${league_id}&team_id=${value.team_id}">${value.teamName}</a></td>
+            <td>${value.all.matchsPlayed}</td>
+            <td>${formList}</td>
+            <td>${value.all.win}</td>
+            <td>${value.all.draw}</td>
+            <td>${value.all.lose}</td>
+            <td>${value.all.goalsFor}</td>
+            <td>${value.all.goalsAgainst}</td>
+            <td>${value.goalsDiff}</td>
+            <td>${value.points}</td>
+        </tr>`
+    });
+
+    leagueTable += `</table>`;
+    return leagueTable;
+}

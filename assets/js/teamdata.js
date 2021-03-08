@@ -22,7 +22,7 @@ function updateResultsTable(resultsData) {
         <td></td>
         <td>Away Team</td>
      </tr>`
- 
+
     $.each(resultsData.api.fixtures, function (index, value) {
         var fixtureDate = new Date(value.event_date);
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
@@ -53,7 +53,7 @@ function updateTeamFixturesTable(teamFixturesData) {
         <td>Away Team</td>
         <td>Kickoff</td>
     </tr>`
- 
+
     $.each(teamFixturesData.api.fixtures, function (index, value) {
         var fixtureDate = new Date(value.event_date);
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
@@ -77,27 +77,34 @@ $(document).ready(function () {
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
-    const team_id = urlParams.get('team_id')
+    const team_id = urlParams.get('team_id');
+    const league_id = urlParams.get('league_id');
     console.log(team_id);
-
+    console.log(league_id);
     // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
     var oneDay = 1 * 24 * 60 * 60 * 1000;
     var url = "v2/teams/team/" + team_id;
-    
-    getData(url, 'team'+team_id, oneDay).then(data => {
+
+    getData(url, 'team' + team_id, oneDay).then(data => {
         console.log(data);
         $("#team-info").html(updateTeamInfo(data));
     });
 
     url = "v2/fixtures/team/" + team_id + "/last/5";
-    getData(url, 'fixtures'+team_id, oneDay).then(data => {
+    getData(url, 'fixtures' + team_id, oneDay).then(data => {
         console.log('Team Fixtures:', data);
         $("#results-table").html(updateResultsTable(data));
-    })
+    });
 
     url = "v2/fixtures/team/" + team_id + "/next/5";
-    getData(url, 'nextfixtures'+team_id, oneDay).then(data => {
+    getData(url, 'nextfixtures' + team_id, oneDay).then(data => {
         console.log('Next Fixtures:', data);
         $("#team-fixtures-table").html(updateTeamFixturesTable(data));
-    })
+    });
+
+    url = "v2/leagueTable/" + league_id;
+    getData(url, 'table', oneDay).then(data => {
+        console.log(data);
+        $("#league-table").html(updateLeagueTable(data, league_id));
+    });
 });
