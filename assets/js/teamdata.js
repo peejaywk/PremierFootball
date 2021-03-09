@@ -21,6 +21,7 @@ function updateResultsTable(resultsData) {
         <td></td>
         <td></td>
         <td>Away Team</td>
+        <td></td>
      </tr>`
 
     $.each(resultsData.api.fixtures, function (index, value) {
@@ -36,9 +37,26 @@ function updateResultsTable(resultsData) {
             <td>${value.goalsAwayTeam}</td>
             <td><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td class="uppercase table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
+            <td><button type="button" class="btn btn-primary btn-stats" onClick="statsButtonClicked(${value.fixture_id})">stats</button></td>
         </tr>`
     });
     resultsTable += `</table>`;
+    resultsTable += `
+        <div class="modal fade" id="fixture-modal" tabindex="-1" aria-labelledby="fixture-window" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id=modal-teamid></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    `;
+    //<td><button type="button" class="btn btn-primary btn-stats" data-bs-toggle="modal" data-bs-target="#exampleModal">stats</button></td>
     return resultsTable;
 }
 
@@ -70,6 +88,12 @@ function updateTeamFixturesTable(teamFixturesData) {
     });
     teamFixtureTable += `</table>`;
     return teamFixtureTable;
+}
+
+function statsButtonClicked(fixture_id) {
+    console.log('Model: ',fixture_id);
+    $('#modal-teamid').html(fixture_id);
+    $('#fixture-modal').modal('show');
 }
 
 // Execute the function once the DOM is ready.

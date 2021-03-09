@@ -89,8 +89,8 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
     * This page can  be accessed by clicking on the 'Contact' link in the footer.
 
 ### 9/3/2021 Design Change
-Decided to remove the MyTeam link from the navigation bar as the user can select any team from the home page to get more information for that team. That
-will take the user to a new page. Clicking the home button will take the user back to the home page.
+Decided to remove the MyTeam link from the navigation bar as the user can select any team from the home page to get more information for that team - clicking
+a team name will open a new page for that team . Clicking the home button will take the user back to the home page.
 
 <a name="technologies"></a>
 ## Technologies Used

@@ -88,6 +88,20 @@ tr.table-header {
     color: #EBE7EE;
 }
 
+.btn-stats {
+    background-color: #365C18;
+    height: 22px;
+    text-align: center;
+    padding: 0 4px 0 4px;
+    font-size: 14px;
+    vertical-align: baseline;
+}
+
+.btn-stats:hover,
+.btn-stats:focus {
+    background-color: #E2062C;
+    border-color: #E2062C;
+}
 /*---------- Premier Leagure Table Items ----------*/
 .leaguetable-section {
     position: relative;
