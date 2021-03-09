@@ -88,6 +88,10 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
     * Below the form will be a submit button.
     * This page can  be accessed by clicking on the 'Contact' link in the footer.
 
+### 9/3/2021 Design Change
+Decided to remove the MyTeam link from the navigation bar as the user can select any team from the home page to get more information for that team. That
+will take the user to a new page. Clicking the home button will take the user back to the home page.
+
 <a name="technologies"></a>
 ## Technologies Used
 * This website uses HTML and CSS programming languages.

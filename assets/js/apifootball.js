@@ -63,8 +63,8 @@ function createFormList(formString) {
 function updateLeagueTable(leagueTableData, league_id) {
     var leagueTable = `<table class="league-table">`;
     leagueTable += `
-    <tr>
-        <td>Position</td>
+    <tr class="table-header">
+        <td>Rank</td>
         <td></td>
         <td>Team Name</td>
         <td>Played</td>

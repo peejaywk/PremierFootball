@@ -39,6 +39,10 @@ tr:nth-child(odd) {
     background: #C7BDD0;
 }
 
+td {
+    padding-left: 5px;
+}
+
 /*---------- NavBar Items ----------*/
 .nav-section {
     background-color: #583973;
@@ -55,6 +59,8 @@ tr:nth-child(odd) {
 /*---------- Callout Items ----------*/
 .callout-section {
     position: relative;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 /*---------- Premier League Info / Fixtures Table Items ----------*/
@@ -63,10 +69,24 @@ tr:nth-child(odd) {
     margin-bottom: 50px;
 }
 
+.team-fixture-section {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
 .fixture-table {
     width: 100%;
 }
 
+#results-table {
+    margin-bottom: 25px;
+}
+
+tr.table-header {
+    background-color: #583973;
+    color: #EBE7EE;
+}
 
 /*---------- Premier Leagure Table Items ----------*/
 .leaguetable-section {
@@ -80,6 +100,7 @@ tr:nth-child(odd) {
 
 .form-ul {
     margin: 0;
+    padding: 0;
 }
 
 .form-li-won {

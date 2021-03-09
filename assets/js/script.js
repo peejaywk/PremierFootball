@@ -22,7 +22,7 @@ function updateHomePage(leagueData) {
 function updateFixturesTable(fixtureList) {
     var fixtureTable = `<table class="fixture-table">`;
     fixtureTable += `
-    <tr>
+    <tr class="table-header">
         <td>Date</td>
         <td></td>
         <td>Home Team</td>

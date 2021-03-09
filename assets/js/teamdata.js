@@ -1,6 +1,6 @@
 function updateTeamInfo(teamData) {
     return `
-        <h4>${teamData.api.teams[0].name}</h4>
+        <h4 class="uppercase">${teamData.api.teams[0].name}</h4>
         <img src="${teamData.api.teams[0].logo}" min-width="80" min-height="80" alt="League Logo">
         <p>Founded: ${teamData.api.teams[0].founded}</p>
         <p>Venue: ${teamData.api.teams[0].venue_name}</p>
@@ -13,7 +13,7 @@ function updateTeamInfo(teamData) {
 function updateResultsTable(resultsData) {
     var resultsTable = `<table class="fixture-table">`;
     resultsTable += `
-    <tr>
+    <tr class="table-header">
         <td>Date</td>
         <td></td>
         <td>Home Team</td>
@@ -45,7 +45,7 @@ function updateResultsTable(resultsData) {
 function updateTeamFixturesTable(teamFixturesData) {
     var teamFixtureTable = `<table class="fixture-table">`;
     teamFixtureTable += `
-    <tr>
+    <tr class="table-header">
         <td>Date</td>
         <td></td>
         <td>Home Team</td>
