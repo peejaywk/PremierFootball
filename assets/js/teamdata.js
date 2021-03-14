@@ -10,6 +10,7 @@ function updateTeamInfo(teamData) {
     `
 }
 
+// Update the team results table
 function updateResultsTable(resultsData) {
     var resultsTable = `<table class="fixture-table">`;
     resultsTable += `
@@ -56,10 +57,10 @@ function updateResultsTable(resultsData) {
         </div>
         </div>
     `;
-    //<td><button type="button" class="btn btn-primary btn-stats" data-bs-toggle="modal" data-bs-target="#exampleModal">stats</button></td>
     return resultsTable;
 }
 
+// Update the team fixtures table
 function updateTeamFixturesTable(teamFixturesData) {
     var teamFixtureTable = `<table class="fixture-table">`;
     teamFixtureTable += `
@@ -90,6 +91,8 @@ function updateTeamFixturesTable(teamFixturesData) {
     return teamFixtureTable;
 }
 
+// Request the statistics for the given fixture_id and update the contents of the modal window
+// Team names are passed in so they can also be displayed in the window
 function statsButtonClicked(fixture_id, home_team, away_team) {
     console.log('Model: ',fixture_id);
 

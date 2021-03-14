@@ -5,6 +5,10 @@ body {
     background-color: #EBE7EE;
 }
 
+h4 {
+    color: #583973;
+}
+
 a:link {
   text-decoration: none;
 }
