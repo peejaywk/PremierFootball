@@ -111,6 +111,8 @@ a team name will open a new page for that team . Clicking the home button will t
 Code used to move the footer to the bottom of the screen (not fixed).
 [Stackoverflow](https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221)
 
+Removing a shadow from a button.
+[Stackoverflow](https://stackoverflow.com/questions/39210985/remove-button-shadow)
 <a name="deployment"></a>
 ## Deployment
 

@@ -56,6 +56,10 @@ td {
     color: #EBE7EE;
 }
 
+.navbar-brand i {
+    font-size: 40px;
+}
+
 /*---------- Callout Items ----------*/
 .callout-section {
     position: relative;
@@ -101,8 +105,13 @@ tr.table-header {
 .btn-stats:focus {
     background-color: #E2062C;
     border-color: #E2062C;
+    
 }
 /*---------- Premier Leagure Table Items ----------*/
+#team-info {
+    text-align: center;
+}
+
 .leaguetable-section {
     position: relative;
     margin-bottom: 50px;
@@ -159,4 +168,12 @@ tr.table-header {
 
 .social-media-link i{
     color: #EBE7EE;
+}
+
+/* ---------- Media Queries ---------- */
+@media screen and (min-width: 768px) {
+    /* Align the booking button to the right of the nav bar */
+    #team-info {
+        text-align: left;
+    }
 }

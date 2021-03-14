@@ -65,15 +65,15 @@ function updateLeagueTable(leagueTableData, league_id) {
     leagueTable += `
     <tr class="table-header">
         <td>Rank</td>
-        <td></td>
+        <td class="d-none d-md-table-cell"></td>
         <td>Team Name</td>
-        <td>Played</td>
+        <td>P</td>
         <td class="d-none d-md-table-cell">Form</td>
-        <td>Won</td>
-        <td>Drawn</td>
-        <td>Lost</td>
-        <td class="d-none d-md-table-cell">For</td>
-        <td class="d-none d-md-table-cell">Against</td>
+        <td>W</td>
+        <td>D</td>
+        <td>L</td>
+        <td class="d-none d-md-table-cell">GF</td>
+        <td class="d-none d-md-table-cell">GA</td>
         <td class="d-none d-md-table-cell">GD</td>
         <td>Points</td>
     </tr>`
@@ -83,7 +83,7 @@ function updateLeagueTable(leagueTableData, league_id) {
         leagueTable += `
         <tr class="table-text">
             <td>${value.rank}</td>
-            <td><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
+            <td class="d-none d-md-table-cell"><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td class="uppercase table-teamname"><a href="team.html?league_id=${league_id}&team_id=${value.team_id}">${value.teamName}</a></td>
             <td>${value.all.matchsPlayed}</td>
             <td class="d-none d-md-table-cell">${formList}</td>
