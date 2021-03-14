@@ -37,7 +37,7 @@ function updateResultsTable(resultsData) {
             <td>${value.goalsAwayTeam}</td>
             <td class="d-none d-md-table-cell"><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td class="table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
-            <td><button type="button" class="btn btn-primary shadow-none btn-stats" onClick="statsButtonClicked(${value.fixture_id})">stats</button></td>
+            <td><button type="button" class="btn btn-primary shadow-none btn-stats" onClick="statsButtonClicked(${value.fixture_id},'${value.homeTeam.team_name}','${value.awayTeam.team_name}')">stats</button></td>
         </tr>`
     });
     resultsTable += `</table>`;
@@ -46,7 +46,7 @@ function updateResultsTable(resultsData) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="modalLabel"></h5>
                     <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -90,7 +90,7 @@ function updateTeamFixturesTable(teamFixturesData) {
     return teamFixtureTable;
 }
 
-function statsButtonClicked(fixture_id) {
+function statsButtonClicked(fixture_id, home_team, away_team) {
     console.log('Model: ',fixture_id);
 
     var oneDay = 1 * 24 * 60 * 60 * 1000;
@@ -99,67 +99,67 @@ function statsButtonClicked(fixture_id) {
     getData(url, 'fixture' + fixture_id, oneDay).then(data => {
         console.log('Fixture Data:', data);
         $('#modal-teamid').html(`
-            <tr>
-                <td></td>
-                <td>Home</td>
-                <td>Away</td>
-            </tr>    
-            <tr>
-                <td>Ball Possession</td>
-                <td>${data.api.statistics["Ball Possession"].home}</td>
-                <td>${data.api.statistics["Ball Possession"].away}</td>
-            </tr>
-            <tr>
-                <td>Corner Kicks</td>
-                <td>${data.api.statistics["Corner Kicks"].home}</td>
-                <td>${data.api.statistics["Corner Kicks"].away}</td>
-            </tr>
-            <tr>
-                <td>Fouls</td>
-                <td>${data.api.statistics["Fouls"].home}</td>
-                <td>${data.api.statistics["Fouls"].away}</td>
-            </tr>
-            <tr>
-                <td>Goal Keeper Saves</td>
-                <td>${data.api.statistics["Goalkeeper Saves"].home}</td>
-                <td>${data.api.statistics["Goalkeeper Saves"].away}</td>
-            </tr>
-            <tr>
-                <td>Offsides</td>
-                <td>${data.api.statistics["Offsides"].home}</td>
-                <td>${data.api.statistics["Offsides"].away}</td>
-            </tr>
-            <tr>
-                <td>Passes %</td>
-                <td>${data.api.statistics["Passes %"].home}</td>
-                <td>${data.api.statistics["Passes %"].away}</td>
-            </tr>
-            <tr>
-                <td>Passes Accurate</td>
-                <td>${data.api.statistics["Passes accurate"].home}</td>
-                <td>${data.api.statistics["Passes accurate"].away}</td>
-            </tr>
-            <tr>
-                <td>Yellow Cards</td>
-                <td>${data.api.statistics["Yellow Cards"].home}</td>
-                <td>${data.api.statistics["Yellow Cards"].away}</td>
-            </tr>
-            <tr>
-                <td>Red Cards</td>
-                <td>${data.api.statistics["Red Cards"].home}</td>
-                <td>${data.api.statistics["Red Cards"].away}</td>
-            </tr>
-            <tr>
-                <td>Shots on Goal</td>
-                <td>${data.api.statistics["Shots on Goal"].home}</td>
-                <td>${data.api.statistics["Shots on Goal"].away}</td>
-            </tr>
-        
+            <table class="league-table">
+                <tr class="table-header">
+                    <td></td>
+                    <td>Home</td>
+                    <td>Away</td>
+                </tr>    
+                <tr class="table-text">
+                    <td>Ball Possession</td>
+                    <td>${data.api.statistics["Ball Possession"].home}</td>
+                    <td>${data.api.statistics["Ball Possession"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Corner Kicks</td>
+                    <td>${data.api.statistics["Corner Kicks"].home}</td>
+                    <td>${data.api.statistics["Corner Kicks"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Fouls</td>
+                    <td>${data.api.statistics["Fouls"].home}</td>
+                    <td>${data.api.statistics["Fouls"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Goal Keeper Saves</td>
+                    <td>${data.api.statistics["Goalkeeper Saves"].home}</td>
+                    <td>${data.api.statistics["Goalkeeper Saves"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Offsides</td>
+                    <td>${data.api.statistics["Offsides"].home}</td>
+                    <td>${data.api.statistics["Offsides"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Passes %</td>
+                    <td>${data.api.statistics["Passes %"].home}</td>
+                    <td>${data.api.statistics["Passes %"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Passes Accurate</td>
+                    <td>${data.api.statistics["Passes accurate"].home}</td>
+                    <td>${data.api.statistics["Passes accurate"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Yellow Cards</td>
+                    <td>${data.api.statistics["Yellow Cards"].home}</td>
+                    <td>${data.api.statistics["Yellow Cards"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Red Cards</td>
+                    <td>${data.api.statistics["Red Cards"].home}</td>
+                    <td>${data.api.statistics["Red Cards"].away}</td>
+                </tr>
+                <tr class="table-text">
+                    <td>Shots on Goal</td>
+                    <td>${data.api.statistics["Shots on Goal"].home}</td>
+                    <td>${data.api.statistics["Shots on Goal"].away}</td>
+                </tr>     
+            </table>  
         `
         );
     });
-
-    $('#modal-teamid').html(fixture_id);
+    $('#modalLabel').html(home_team+' v '+away_team);
     $('#fixture-modal').modal('show');
 }
 
