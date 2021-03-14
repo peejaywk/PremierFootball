@@ -21,14 +21,18 @@ a:link {
     display: inline-block;
 }
 
+.table-header {
+     font-size: 14px;
+}
+
 .table-text {
     font-weight: 300;
+    font-size: 12px;
     vertical-align: middle;
 }
 
 .table-teamname {
     font-weight: bold;
-    font-size: 0.9rem;
 }
 
 tr:nth-child(even) {
@@ -85,6 +89,7 @@ td {
 
 #results-table {
     margin-bottom: 25px;
+    font-size: 12px;
 }
 
 tr.table-header {
@@ -175,5 +180,11 @@ tr.table-header {
     /* Align the booking button to the right of the nav bar */
     #team-info {
         text-align: left;
+    }
+    .table-text {
+        font-size: 16px;
+    }
+    .table-header {
+        font-size: 18px;
     }
 }
