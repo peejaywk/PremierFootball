@@ -21,6 +21,10 @@ a:link {
     display: inline-block;
 }
 
+.table-title {
+    margin-bottom: 25px;
+}
+
 .table-header {
      font-size: 14px;
 }
@@ -156,6 +160,7 @@ tr.table-header {
 
 /*---------- Footer Items ----------*/
 .footer-section {
+    text-align: center;
     color: #EBE7EE;
     bottom: 0;
     width: 100%;
@@ -173,6 +178,11 @@ tr.table-header {
 
 .social-media-link i{
     color: #EBE7EE;
+    font-size: 25px;
+}
+
+.social-media-text {
+    margin-bottom: 0.5rem;
 }
 
 /* ---------- Media Queries ---------- */

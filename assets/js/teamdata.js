@@ -1,6 +1,6 @@
 function updateTeamInfo(teamData) {
     return `
-        <h4 class="uppercase">${teamData.api.teams[0].name}</h4>
+        <h4 class="uppercase table-title">${teamData.api.teams[0].name}</h4>
         <img src="${teamData.api.teams[0].logo}" min-width="80" min-height="80" alt="League Logo">
         <p>Founded: ${teamData.api.teams[0].founded}</p>
         <p>Venue: ${teamData.api.teams[0].venue_name}</p>
