@@ -84,7 +84,7 @@ function updateLeagueTable(leagueTableData, league_id) {
         <tr class="table-text">
             <td>${value.rank}</td>
             <td class="d-none d-md-table-cell"><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td class="uppercase table-teamname"><a href="team.html?league_id=${league_id}&team_id=${value.team_id}">${value.teamName}</a></td>
+            <td class="table-teamname"><a href="team.html?league_id=${league_id}&team_id=${value.team_id}">${value.teamName}</a></td>
             <td>${value.all.matchsPlayed}</td>
             <td class="d-none d-md-table-cell">${formList}</td>
             <td>${value.all.win}</td>

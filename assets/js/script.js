@@ -12,7 +12,7 @@ function getLeagueData(data, leagueName) {
 
 function updateHomePage(leagueData) {
     return `
-        <img src="${leagueData.logo}" min-width="80" min-height="80" alt="League Logo">
+        <img src="${leagueData.logo}" class="logo-img" alt="League Logo">
         <p>Season Start: ${leagueData.season_start}</p>
         <p>Season End: ${leagueData.season_end}</p>
     `
@@ -39,9 +39,9 @@ function updateFixturesTable(fixtureList) {
         <tr class="table-text">
             <td>${fixtureDate.toLocaleDateString('en-GB', options)}</td>
             <td class="d-none d-md-table-cell"><img src="${value.homeTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td class="uppercase table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
+            <td class="table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
             <td class="d-none d-md-table-cell"><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
-            <td class="uppercase table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
+            <td class="table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
              <td>${fixtureDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</td>
         </tr>`
     });

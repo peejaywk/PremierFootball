@@ -51,6 +51,12 @@ td {
     padding-left: 5px;
 }
 
+.logo-img {
+    min-width: 80px;
+    min-height: 80px;
+    margin-bottom: 20px;
+}
+
 /*---------- NavBar Items ----------*/
 .nav-section {
     background-color: #583973;
