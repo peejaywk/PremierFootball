@@ -2,11 +2,27 @@ function updateTeamInfo(teamData) {
     return `
         <h4 class="uppercase table-title">${teamData.api.teams[0].name}</h4>
         <img src="${teamData.api.teams[0].logo}" class="logo-img" alt="League Logo">
-        <p>Founded: ${teamData.api.teams[0].founded}</p>
-        <p>Venue: ${teamData.api.teams[0].venue_name}</p>
-        <p>Venue Address: ${teamData.api.teams[0].venue_address}</p>
-        <p>Venue City: ${teamData.api.teams[0].venue_city}</p>
-        <p>Venue Capacity: ${teamData.api.teams[0].venue_capacity}</p>
+
+        <div>
+            <div class="inline-block title-text">Founded:</div>
+            <div class="inline-block info-text">${teamData.api.teams[0].founded}</div>
+        </div>
+        <div>
+            <div class="inline-block title-text">Venue:</div>
+            <div class="inline-block info-text">${teamData.api.teams[0].venue_name}</div>
+        </div>
+        <div>
+            <div class="inline-block title-text">Address:</div>
+            <div class="inline-block info-text">${teamData.api.teams[0].venue_address}</div>
+        </div>
+        <div>
+            <div class="inline-block title-text">City:</div>
+            <div class="inline-block info-text">${teamData.api.teams[0].venue_city}</div>
+        </div>
+        <div>
+            <div class="inline-block title-text">Capacity:</div>
+            <div class="inline-block info-text">${teamData.api.teams[0].venue_capacity}</div>
+        </div>
     `
 }
 

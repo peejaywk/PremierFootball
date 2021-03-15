@@ -13,8 +13,14 @@ function getLeagueData(data, leagueName) {
 function updateHomePage(leagueData) {
     return `
         <img src="${leagueData.logo}" class="logo-img" alt="League Logo">
-        <p>Season Start: ${leagueData.season_start}</p>
-        <p>Season End: ${leagueData.season_end}</p>
+        <div>
+            <div class="inline-block title-text">Season Start:</div>
+            <div class="inline-block info-text">${leagueData.season_start}</div>
+        </div>
+        <div>
+            <div class="inline-block title-text">Season End:</div>
+            <div class="inline-block info-text">${leagueData.season_end}</div>
+        </div>
     `
 }
 
