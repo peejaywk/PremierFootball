@@ -99,6 +99,10 @@ td {
 }
 
 /*---------- Premier League Info / Fixtures Table Items ----------*/
+#league-info {
+    text-align: center;
+}
+
 .league-fixture-section {
     position: relative;
     margin-bottom: 50px;
@@ -234,7 +238,8 @@ label {
 /* ---------- Media Queries ---------- */
 @media screen and (min-width: 768px) {
     /* Align the booking button to the right of the nav bar */
-    #team-info {
+    #team-info,
+    #league-info {
         text-align: left;
     }
     .table-text {

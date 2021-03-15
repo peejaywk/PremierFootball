@@ -12,6 +12,7 @@ function getLeagueData(data, leagueName) {
 
 function updateHomePage(leagueData) {
     return `
+        <h4 class="uppercase table-title">Premier League</h4>
         <img src="${leagueData.logo}" class="logo-img" alt="League Logo">
         <div>
             <div class="inline-block title-text">Season Start:</div>
