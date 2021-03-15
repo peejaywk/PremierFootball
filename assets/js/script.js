@@ -1,5 +1,9 @@
-// Function to search 'data' for a league named 'leagueName'.
-// Returns the league data if found, otherwise will return null.
+/**  
+ * Function to search 'data' for a league named 'leagueName'.
+ * Returns the league data if found, otherwise will return null.
+ * @param {Object} data 
+ * @param {string} leagueName 
+*/
 function getLeagueData(data, leagueName) {
     var leagueData = null;
     $.each(data.api.leagues, function (index, value) {
@@ -25,7 +29,10 @@ function updateHomePage(leagueData) {
     `
 }
 
-// Create a table containing the upcoming fixtures.
+/**
+ * Create a table containing the upcoming fixtures.
+ * @param {Object} fixtureList 
+ */
 function updateFixturesTable(fixtureList) {
     var fixtureTable = `<table class="fixture-table">`;
     fixtureTable += `
@@ -56,7 +63,10 @@ function updateFixturesTable(fixtureList) {
     return fixtureTable;
 }
 
-// Execute the function once the DOM is ready.
+
+/**
+ * Execute the function once the DOM is ready.
+ */
 $(document).ready(function () {
     // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
     var oneDay = 1 * 24 * 60 * 60 * 1000;

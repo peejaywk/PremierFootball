@@ -26,7 +26,10 @@ function updateTeamInfo(teamData) {
     `
 }
 
-// Update the team results table
+/**
+ * Update the team results table
+ * @param {Object} resultsData 
+ */
 function updateResultsTable(resultsData) {
     var resultsTable = `<table class="fixture-table">`;
     resultsTable += `
@@ -76,7 +79,10 @@ function updateResultsTable(resultsData) {
     return resultsTable;
 }
 
-// Update the team fixtures table
+/**
+ * Update the team fixtures table
+ * @param {Object} teamFixturesData 
+ */
 function updateTeamFixturesTable(teamFixturesData) {
     var teamFixtureTable = `<table class="fixture-table">`;
     teamFixtureTable += `
@@ -107,8 +113,13 @@ function updateTeamFixturesTable(teamFixturesData) {
     return teamFixtureTable;
 }
 
-// Request the statistics for the given fixture_id and update the contents of the modal window
-// Team names are passed in so they can also be displayed in the window
+/**
+ * Request the statistics for the given fixture_id and update the contents of the modal window
+ * Team names are passed in so they can also be displayed in the window
+ * @param {string} fixture_id 
+ * @param {string} home_team 
+ * @param {string} away_team 
+ */
 function statsButtonClicked(fixture_id, home_team, away_team) {
     console.log('Model: ',fixture_id);
 
@@ -182,7 +193,9 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
     $('#fixture-modal').modal('show');
 }
 
-// Execute the function once the DOM is ready.
+/**
+ * Execute the function once the DOM is ready.
+ */
 $(document).ready(function () {
     const queryString = window.location.search;
     console.log(queryString);
