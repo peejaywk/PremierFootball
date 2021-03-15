@@ -61,6 +61,10 @@ td {
     margin-bottom: 20px;
 }
 
+.para-text {
+    text-align: left;
+}
+
 /*---------- NavBar Items ----------*/
 .nav-section {
     background-color: #583973;
@@ -166,6 +170,29 @@ tr.table-header {
     height: 18px;
     width: 18px;
     border-radius: 2px;
+}
+
+/*---------- Contact Container ----------*/
+.contact-container {
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.form-group {
+     margin-bottom: 15px;
+}
+
+textarea {
+    width: 100%
+}
+
+label {
+    margin-top: .5rem;
+    display: block;
+    text-align: left;
 }
 
 /*---------- Footer Items ----------*/
