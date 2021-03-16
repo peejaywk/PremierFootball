@@ -76,14 +76,14 @@ function updateLeagueTable(leagueTableData, league_id) {
         <td>Rank</td>
         <td class="d-none d-md-table-cell"></td>
         <td>Team Name</td>
-        <td>P</td>
+        <td data-bs-toggle="tooltip" title="Games Played">P</td>
         <td class="d-none d-md-table-cell">Form</td>
-        <td>W</td>
-        <td>D</td>
-        <td>L</td>
-        <td class="d-none d-md-table-cell">GF</td>
-        <td class="d-none d-md-table-cell">GA</td>
-        <td class="d-none d-md-table-cell">GD</td>
+        <td data-bs-toggle="tooltip" title="Games Won">W</td>
+        <td data-bs-toggle="tooltip" title="Games Drawn">D</td>
+        <td data-bs-toggle="tooltip" title="Games Lost">L</td>
+        <td class="d-none d-md-table-cell" data-bs-toggle="tooltip" title="Goals For">GF</td>
+        <td class="d-none d-md-table-cell" data-bs-toggle="tooltip" title="Goals Against">GA</td>
+        <td class="d-none d-md-table-cell" data-bs-toggle="tooltip" title="Goal Difference">GD</td>
         <td>Points</td>
     </tr>`
 
@@ -109,3 +109,4 @@ function updateLeagueTable(leagueTableData, league_id) {
     leagueTable += `</table>`;
     return leagueTable;
 }
+
