@@ -93,10 +93,13 @@ $(document).ready(function () {
             console.log(data);
             $("#league-table").html(updateLeagueTable(data, league_id));
         });
+        
+        // Initialise tooltips - select using the 'data-bs-toggle' attribute.
+        // Example code taken from https://getbootstrap.com/docs/5.0/components/tooltips/
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
     });
 })
 
