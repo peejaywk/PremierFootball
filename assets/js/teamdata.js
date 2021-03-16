@@ -128,6 +128,13 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
 
     getData(url, 'fixture' + fixture_id, oneDay).then(data => {
         console.log('Fixture Data:', data);
+
+        // Replace any null parameters with 0
+        var red_card_home = data.api.statistics["Red Cards"].home == null ? 0 : data.api.statistics["Red Cards"].home;
+        var red_card_away = data.api.statistics["Red Cards"].away == null ? 0 : data.api.statistics["Red Cards"].away;
+        var yellow_card_home = data.api.statistics["Yellow Cards"].home == null ? 0 : data.api.statistics["Yellow Cards"].home;
+        var yellow_card_away = data.api.statistics["Yellow Cards"].away == null ? 0 : data.api.statistics["Yellow Cards"].away;
+        
         $('#modal-teamid').html(`
             <table class="league-table">
                 <tr class="table-header">
@@ -172,13 +179,13 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
                 </tr>
                 <tr class="table-text">
                     <td>Yellow Cards</td>
-                    <td>${data.api.statistics["Yellow Cards"].home}</td>
-                    <td>${data.api.statistics["Yellow Cards"].away}</td>
+                    <td>${yellow_card_home}</td>
+                    <td>${yellow_card_away}</td>
                 </tr>
                 <tr class="table-text">
                     <td>Red Cards</td>
-                    <td>${data.api.statistics["Red Cards"].home}</td>
-                    <td>${data.api.statistics["Red Cards"].away}</td>
+                    <td>${red_card_home}</td>
+                    <td>${red_card_away}</td>
                 </tr>
                 <tr class="table-text">
                     <td>Shots on Goal</td>
