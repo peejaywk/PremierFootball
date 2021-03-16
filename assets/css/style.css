@@ -115,6 +115,14 @@ td {
     margin-bottom: 25px;
 }
 
+.callout-text {
+    color: #583973;
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.1);
+    padding: 15px;
+    border-radius: 0.2rem;
+}
+
 /*---------- Premier League Info / Fixtures Table Items ----------*/
 #league-info {
     text-align: center;
