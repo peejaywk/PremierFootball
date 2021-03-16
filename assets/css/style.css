@@ -30,6 +30,7 @@ a:link {
     background-color: rgba(0,0,0,0.1);
     padding: 10px;
     border-radius: 0.2rem;
+    text-align: center;
 }
 
 .table-header {
@@ -268,7 +269,8 @@ label {
 @media screen and (min-width: 768px) {
     /* Align the booking button to the right of the nav bar */
     #team-info,
-    #league-info {
+    #league-info,
+    .table-title {
         text-align: left;
     }
     .table-text {
