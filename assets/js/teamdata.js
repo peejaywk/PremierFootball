@@ -1,3 +1,7 @@
+/**
+ * Create the html for the team page. Contains the team logo and general info on the team.
+ * @param {Object} teamData 
+ */
 function updateTeamInfo(teamData) {
     return `
         <h4 class="uppercase table-title">${teamData.api.teams[0].name}</h4>
@@ -28,6 +32,7 @@ function updateTeamInfo(teamData) {
 
 /**
  * Update the team results table
+ * Adds the 'stats' button to the table which calls the modal window
  * @param {Object} resultsData 
  */
 function updateResultsTable(resultsData) {
@@ -44,6 +49,7 @@ function updateResultsTable(resultsData) {
         <td></td>
      </tr>`
 
+    //Loop through each fixture to generate the results table for the team.
     $.each(resultsData.api.fixtures, function (index, value) {
         var fixtureDate = new Date(value.event_date);
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
@@ -61,6 +67,7 @@ function updateResultsTable(resultsData) {
         </tr>`
     });
     resultsTable += `</table>`;
+    // Add the html to create the template for the modal.
     resultsTable += `
         <div class="modal fade" id="fixture-modal" tabindex="-1" aria-labelledby="fixture-window" aria-hidden="true">
         <div class="modal-dialog">
@@ -95,7 +102,9 @@ function updateTeamFixturesTable(teamFixturesData) {
         <td>Kickoff</td>
     </tr>`
 
+    // Loop through the fixtures table and generate the table
     $.each(teamFixturesData.api.fixtures, function (index, value) {
+        //Convert the event date into more user friendly format (Fri, 19 March 2021)
         var fixtureDate = new Date(value.event_date);
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -121,14 +130,11 @@ function updateTeamFixturesTable(teamFixturesData) {
  * @param {string} away_team 
  */
 function statsButtonClicked(fixture_id, home_team, away_team) {
-    console.log('Model: ',fixture_id);
-
     var oneDay = 1 * 24 * 60 * 60 * 1000;
     var url = "v2/statistics/fixture/" + fixture_id;
 
     getData(url, 'fixture' + fixture_id, oneDay).then(data => {
-        console.log('Fixture Data:', data);
-
+        // Wait for the API data to return then update the modal html.
         // Replace any null parameters with 0
         var red_card_home = data.api.statistics["Red Cards"].home == null ? 0 : data.api.statistics["Red Cards"].home;
         var red_card_away = data.api.statistics["Red Cards"].away == null ? 0 : data.api.statistics["Red Cards"].away;
@@ -205,36 +211,35 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
  */
 $(document).ready(function () {
     const queryString = window.location.search;
-    console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
+    // Extract the team_id and league_id from the page URL. This is passed from the home page.
     const team_id = urlParams.get('team_id');
     const league_id = urlParams.get('league_id');
-    console.log(team_id);
-    console.log(league_id);
+
     // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
     var oneDay = 1 * 24 * 60 * 60 * 1000;
+    
+    // Request the team data from the API
     var url = "v2/teams/team/" + team_id;
-
     getData(url, 'team' + team_id, oneDay).then(data => {
-        console.log(data);
         $("#team-info").html(updateTeamInfo(data));
     });
 
+    // Request the last 5 results for the team from the API
     url = "v2/fixtures/team/" + team_id + "/last/5";
     getData(url, 'fixtures' + team_id, oneDay).then(data => {
-        console.log('Team Fixtures:', data);
         $("#results-table").html(updateResultsTable(data));
     });
 
+    // Request the next 5 fixtures for the team from the API
     url = "v2/fixtures/team/" + team_id + "/next/5";
     getData(url, 'nextfixtures' + team_id, oneDay).then(data => {
-        console.log('Next Fixtures:', data);
         $("#team-fixtures-table").html(updateTeamFixturesTable(data));
     });
 
+    // Request the league standings from the API
     url = "v2/leagueTable/" + league_id;
     getData(url, 'table', oneDay).then(data => {
-        console.log(data);
         $("#league-table").html(updateLeagueTable(data, league_id));
     });
 });

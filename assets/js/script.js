@@ -14,6 +14,10 @@ function getLeagueData(data, leagueName) {
     return leagueData;
 }
 
+/**
+ * Update the home page with the Premier League logo and the season start and end dates
+ * @param {Object} leagueData 
+ */
 function updateHomePage(leagueData) {
     return `
         <h4 class="uppercase table-title">Premier League</h4>
@@ -45,7 +49,9 @@ function updateFixturesTable(fixtureList) {
         <td>Kickoff</td>
     </tr>`
  
+    // Loop through each fixture and update the table
     $.each(fixtureList.api.fixtures, function (index, value) {
+        //Convert the event date into more user friendly format (Fri, 19 March 2021)
         var fixtureDate = new Date(value.event_date);
         const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -77,20 +83,20 @@ $(document).ready(function () {
     getData(url, 'league', oneDay).then(data => {
         // Find the league data for the Premiership
         var leagueData = getLeagueData(data, 'Premier League');
-        console.log(leagueData);
 
         $("#league-info").html(updateHomePage(leagueData));
 
         return leagueData.league_id;
-    }).then(league_id => {
+    }).then(league_id => { // Once the league_id has been returned from the API update the fixtures and leagues table
+        //Request the league fixtures for the next 10 days
         var url = "v2/fixtures/league/" + league_id + "/next/10?timezone=Europe%2FLondon";
         getData(url, 'fixtures', oneDay).then(data => {
-            console.log(data);
             $("#fixtures-table").html(updateFixturesTable(data));
         });
+
+        //Request the current standings for the Premier League
         var url = "v2/leagueTable/" + league_id;
         getData(url, 'table', oneDay).then(data => {
-            console.log(data);
             $("#league-table").html(updateLeagueTable(data, league_id));
         });
         

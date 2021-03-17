@@ -69,6 +69,13 @@ function createFormList(formString) {
     return formList;
 }
 
+/**
+ * Create the Premier League table from the leagueTableData object.
+ * Inserts the 'form' list
+ * On mobile devices certain columns will be hidden to enable the table to fit on the page.
+ * @param {Object} leagueTableData 
+ * @param {string} league_id 
+ */
 function updateLeagueTable(leagueTableData, league_id) {
     var leagueTable = `<table class="league-table">`;
     leagueTable += `
