@@ -60,6 +60,10 @@ td {
     padding-left: 5px;
 }
 
+.row-highlight {
+    background:lightskyblue !important;
+}
+
 .logo-img {
     min-width: 80px;
     min-height: 80px;

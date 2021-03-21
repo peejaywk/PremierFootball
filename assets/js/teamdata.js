@@ -240,6 +240,6 @@ $(document).ready(function () {
     // Request the league standings from the API
     url = "v2/leagueTable/" + league_id;
     getData(url, 'table', oneDay).then(data => {
-        $("#league-table").html(updateLeagueTable(data, league_id));
+        $("#league-table").html(updateLeagueTable(data, league_id, team_id));
     });
 });

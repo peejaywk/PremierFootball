@@ -102,7 +102,7 @@ $(document).ready(function () {
         //Request the current standings for the Premier League
         var url = "v2/leagueTable/" + league_id;
         getData(url, 'table', oneDay).then(data => {
-            $("#league-table").html(updateLeagueTable(data, league_id));
+            $("#league-table").html(updateLeagueTable(data, league_id, ''));
         });
         
         // Initialise tooltips - select using the 'data-bs-toggle' attribute.

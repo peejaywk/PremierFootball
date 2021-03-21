@@ -75,8 +75,9 @@ function createFormList(formString) {
  * On mobile devices certain columns will be hidden to enable the table to fit on the page.
  * @param {Object} leagueTableData 
  * @param {string} league_id 
+ * @param {string} team_id
  */
-function updateLeagueTable(leagueTableData, league_id) {
+function updateLeagueTable(leagueTableData, league_id, team_id) {
     var leagueTable = `<table class="league-table">`;
     leagueTable += `
     <tr class="table-header">
@@ -95,9 +96,11 @@ function updateLeagueTable(leagueTableData, league_id) {
     </tr>`
 
     $.each(leagueTableData.api.standings[0], function (index, value) {
+        var teamHighlight = value.team_id==team_id ? 'row-highlight' : '';
+        console.log('Team Highlight:', teamHighlight);
         var formList = createFormList(value.forme);
         leagueTable += `
-        <tr class="table-text">
+        <tr class="table-text ${teamHighlight}">
             <td>${value.rank}</td>
             <td class="d-none d-md-table-cell"><img src="${value.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td class="table-teamname"><a href="team.html?league_id=${league_id}&team_id=${value.team_id}">${value.teamName}</a></td>
