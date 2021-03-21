@@ -77,7 +77,7 @@ function updateResultsTable(resultsData) {
                     <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p id=modal-teamid></p>
+                    <p id="modal-teamid"></p>
                 </div>
             </div>
         </div>

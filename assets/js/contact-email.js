@@ -9,10 +9,12 @@ function sendMail(contactForm) {
     .then(
         function(response) {
             console.log("SUCCESS", response);
+            $('#success-modal').modal('show');
+            contactForm.reset();
         },
         function(error) {
             console.log("FAILED", error);
         });
-    contactForm.reset();
+    
     return false;
 }
