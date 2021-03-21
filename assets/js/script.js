@@ -26,7 +26,9 @@ function updateHomePage(leagueData) {
 
     return `
         <h4 class="uppercase table-title">Premier League</h4>
-        <img src="${leagueData.logo}" class="logo-img" alt="League Logo">
+        <div class="image-section">
+            <img src="${leagueData.logo}" class="logo-img" alt="League Logo">
+        </div>
         <div>
             <div class="inline-block title-text">Season Start:</div>
             <div class="inline-block info-text">${seasonStart.toLocaleDateString('en-GB', options)}</div>

@@ -65,8 +65,8 @@ td {
 }
 
 .logo-img {
-    min-width: 80px;
-    min-height: 80px;
+    min-width: 100px;
+    min-height: 100px;
     margin-bottom: 20px;
 }
 
@@ -81,6 +81,10 @@ td {
 
 .info-text {
     color: #583973;
+}
+
+.image-section {
+    text-align: center;
 }
 
 /*---------- NavBar Items ----------*/

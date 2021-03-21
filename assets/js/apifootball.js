@@ -96,8 +96,10 @@ function updateLeagueTable(leagueTableData, league_id, team_id) {
     </tr>`
 
     $.each(leagueTableData.api.standings[0], function (index, value) {
+        // Add the row-highlight class if the team names match. Used to highlight the team
+        // in the league table when displayed on the team page.
         var teamHighlight = value.team_id==team_id ? 'row-highlight' : '';
-        console.log('Team Highlight:', teamHighlight);
+        
         var formList = createFormList(value.forme);
         leagueTable += `
         <tr class="table-text ${teamHighlight}">
