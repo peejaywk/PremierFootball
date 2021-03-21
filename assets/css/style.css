@@ -5,6 +5,7 @@ body {
     background-color: #EBE7EE;
 }
 
+h3,
 h4 {
     color: #583973;
 }
@@ -173,8 +174,8 @@ tr.table-header {
 
 .btn-stats:hover,
 .btn-stats:focus {
-    background-color: #E2062C;
-    border-color: #E2062C;
+    background-color: #599927;
+    border-color: #599927;
     
 }
 /*---------- Premier Leagure Table Items ----------*/
@@ -241,6 +242,16 @@ label {
     text-align: left;
 }
 
+.btn-contact {
+    background-color: #365C18;
+}
+
+.btn-contact:hover,
+.btn-contact:focus {
+    background-color: #599927;
+    border-color: #599927;
+    
+}
 /*---------- Footer Items ----------*/
 .footer-section {
     text-align: center;

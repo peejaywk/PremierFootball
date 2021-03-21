@@ -113,7 +113,9 @@ is #3D185C. The following color scheme was chosen from the [Colorate](https://co
 * [Font Awesome](https://fontawesome.com/) provided the social media icons and the icons for the concerts and set list sections.
 * [Googel Fonts](https://fonts.google.com/) provided the Roboto font that is used throughout this website.
 * [jQuery](https://jquery.com/). JavaScript library.
-* [](https://obfuscator.io/). Obfustcator for JavaScript
+* [Obfustcator](https://obfuscator.io/). Obfustcator for JavaScript
+* [Colorate](https://colorate.azurewebsites.net/). Colour scheme design website.
+* [JS Lint](https://jslint.com/). Javascript code quality tool.
 
 <a name="testing"></a>
 ## Testing
