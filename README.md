@@ -92,6 +92,18 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
 Decided to remove the MyTeam link from the navigation bar as the user can select any team from the home page to get more information for that team - clicking
 a team name will open a new page for that team . Clicking the home button will take the user back to the home page.
 
+### Colour Palette
+The colour palatte for this website was chosen to complement the purple colour of the Premier League icon displayed on the home page. The RGB colour code for the Premier League icon
+is #3D185C. The following color scheme was chosen from the [Colorate](https://colorate.azurewebsites.net/) website:
+
+![alt text](/assets/images/colour_scheme.png "Website Colour Scheme")
+
+* #583973 - Navbar and footer background colour and used as the main text colour for the site.
+* #E3DEE7 - Table background colour for alternate rows and navlink active colour.
+* #C7BDD0 - Table background colour for alternate rows and navbar brand icon colour.
+* #AB9BB9 - Navlink colour.
+* #EBE7EE - Background colour for the website - not part of the colour scheme above.
+
 <a name="technologies"></a>
 ## Technologies Used
 * This website uses HTML and CSS programming languages.

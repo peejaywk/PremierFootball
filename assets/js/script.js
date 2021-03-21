@@ -19,16 +19,21 @@ function getLeagueData(data, leagueName) {
  * @param {Object} leagueData 
  */
 function updateHomePage(leagueData) {
+    // Convert date into a user friendly format.
+    var seasonStart = new Date(leagueData.season_start);
+    var seasonEnd = new Date(leagueData.season_end);
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+
     return `
         <h4 class="uppercase table-title">Premier League</h4>
         <img src="${leagueData.logo}" class="logo-img" alt="League Logo">
         <div>
             <div class="inline-block title-text">Season Start:</div>
-            <div class="inline-block info-text">${leagueData.season_start}</div>
+            <div class="inline-block info-text">${seasonStart.toLocaleDateString('en-GB', options)}</div>
         </div>
         <div>
             <div class="inline-block title-text">Season End:</div>
-            <div class="inline-block info-text">${leagueData.season_end}</div>
+            <div class="inline-block info-text">${seasonEnd.toLocaleDateString('en-GB', options)}</div>
         </div>
     `
 }

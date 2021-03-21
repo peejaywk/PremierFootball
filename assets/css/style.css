@@ -88,7 +88,7 @@ td {
 }
 
 .navbar-light .navbar-brand:hover {
-    color: #EBE7EE;
+    color: #C7BDD0;
 }
 
 .nav-link {
@@ -97,8 +97,11 @@ td {
     transition: all ease-in-out 0.3s;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color : #AB9BB9;
+}
 .navbar-light .navbar-nav .nav-link.active {
-    color: #C7BDD0;
+    color: #E3DEE7;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
