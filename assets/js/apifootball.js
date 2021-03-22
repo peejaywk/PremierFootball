@@ -29,12 +29,21 @@ async function getData(url, store_id, frequency) {
                 "x-rapidapi-key": `${MY_API}`,
                 "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
             }
+        }).then(result => {
+            // CREDIT: https://stackoverflow.com/questions/54163952/async-await-in-fetch-how-to-handle-errors
+            // Check for other errors that won't be handled by the .catch
+            // Fetch only detects network errors          
+            if (result.status >= 400 && result.status < 600) {
+                throw new Error("Bad repsonse from server");
+            }
+            return result.json();
+        }).catch(error => {
+            console.log("Error:", error);
         });
 
-        let data = await response.json();
-        localStorage.setItem('localData' + store_id, JSON.stringify(data));
+        localStorage.setItem('localData' + store_id, JSON.stringify(response));
         localStorage.setItem('timeDataLastRead' + store_id, timeNow);
-        return data;
+        return response;
     } else {
         console.log('Data is valid. No API call required.');
         let response = await JSON.parse(localStorage.getItem('localData' + store_id));
