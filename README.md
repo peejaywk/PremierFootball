@@ -137,5 +137,5 @@ Removing a shadow from a button.
 * [Working with date objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * Email JS Tutorial - Resume Project (Code Institute)
 * [Stackoverflow]{https://stackoverflow.com/questions/54163952/async-await-in-fetch-how-to-handle-errors} - Handling API errors.
-
+* [PNG Egg]{https://www.pngegg.com/en/png-bakbx} - PNG Egg was used to source the favicon.
 https://www.sitepoint.com/get-url-parameters-with-javascript/
