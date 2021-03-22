@@ -6,7 +6,8 @@ body {
 }
 
 h3,
-h4 {
+h4,
+h5 {
     color: #583973;
 }
 
@@ -205,6 +206,11 @@ tr.table-header {
     padding: 0;
 }
 
+.form-ul-lg {
+    margin: 0;
+    padding: 0;
+}
+
 .form-li-won {
     background-color: #365C18;
 }
@@ -226,6 +232,24 @@ tr.table-header {
     height: 18px;
     width: 18px;
     border-radius: 2px;
+}
+
+.form-li-lg {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    height: 38px;
+    width: 38px;
+    border-radius: 2px;
+    margin-right: 5px;
+    padding: 7px 0;
+}
+
+.team-form-section {
+    margin-top: 20px;
+    text-align: center;
 }
 
 /*---------- Contact Container ----------*/
@@ -292,7 +316,8 @@ label {
     /* Align the booking button to the right of the nav bar */
     #team-info,
     #league-info,
-    .table-title {
+    .table-title,
+    .team-form-section {
         text-align: left;
     }
     .table-text {

@@ -141,7 +141,7 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
         var red_card_away = data.api.statistics["Red Cards"].away == null ? 0 : data.api.statistics["Red Cards"].away;
         var yellow_card_home = data.api.statistics["Yellow Cards"].home == null ? 0 : data.api.statistics["Yellow Cards"].home;
         var yellow_card_away = data.api.statistics["Yellow Cards"].away == null ? 0 : data.api.statistics["Yellow Cards"].away;
-        
+
         $('#modal-teamid').html(`
             <table class="league-table">
                 <tr class="table-header">
@@ -203,8 +203,34 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
         `
         );
     });
-    $('#modalLabel').html(home_team+' v '+away_team);
+    $('#modalLabel').html(home_team + ' v ' + away_team);
     $('#fixture-modal').modal('show');
+}
+
+/**
+ * Create the ul containing the form of the current team being displayed.
+ * @param {Object} leagueData 
+ * @param {string} team_id 
+ */
+function updateTeamForm(leagueData, team_id) {
+    var teamFormList = '';
+    $.each(leagueData.api.standings[0], function (index, value) {
+        // Generate the team form 'ul' for the selected team only
+        if (value.team_id == team_id) {
+            teamFormList = `<ul class="form-ul-lg">`;
+            for (var i = 0; i < value.forme.length; i++) {
+                if (value.forme[i] == 'W' || value.forme[i] == 'w') {
+                    teamFormList += `<li class="form-li-lg form-li-won">${value.forme[i]}</li>`
+                } else if (value.forme[i] == 'L' || value.forme[i] == 'l') {
+                    teamFormList += `<li class="form-li-lg form-li-lost">${value.forme[i]}</li>`
+                } else {
+                    teamFormList += `<li class="form-li-lg form-li-draw">${value.forme[i]}</li>`
+                }
+            }
+            teamFormList += `</ul>`;
+        }
+    });
+    return teamFormList;
 }
 
 /**
@@ -219,7 +245,7 @@ $(document).ready(function () {
 
     // Calculate one day in milliseconds = (day * hours * minutes * seconds * msec)
     var oneDay = 1 * 24 * 60 * 60 * 1000;
-    
+
     // Request the team data from the API
     var url = "v2/teams/team/" + team_id;
     getData(url, 'team' + team_id, oneDay).then(data => {
@@ -242,5 +268,12 @@ $(document).ready(function () {
     url = "v2/leagueTable/" + league_id;
     getData(url, 'table', oneDay).then(data => {
         $("#league-table").html(updateLeagueTable(data, league_id, team_id));
+    });
+
+    // Request the league data again but this time extract the form of the team being displayed
+    // There is no other way to get the team form from the API so the league table has to be requested again (it will be stored locally however)
+    url = "v2/leagueTable/" + league_id;
+    getData(url, 'table', oneDay).then(data => {
+        $("#team-form").html(updateTeamForm(data, team_id));
     });
 });
