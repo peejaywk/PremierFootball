@@ -123,6 +123,8 @@ is #3D185C. The following color scheme was chosen from the [Colorate](https://co
 
 <a name="testing"></a>
 ## Testing
+See [testing.md](assets/documentation/testing.md) for the testing documentation.
+
 
 <a name="bugs"></a>
 ## Bugs / Issues
@@ -131,8 +133,6 @@ Code used to move the footer to the bottom of the screen (not fixed).
 
 Removing a shadow from a button.
 [Stackoverflow](https://stackoverflow.com/questions/39210985/remove-button-shadow)
-<a name="deployment"></a>
-## Deployment
 
 <a name="deployment"></a>
 ## Deployment
