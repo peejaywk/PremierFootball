@@ -18,10 +18,14 @@
 
 #### Returning Users
 * *"As a returning user, I want the website to remember my team selection so I don't have to keep selecting my team each time I visit the site."*
-    
+    * During the development of the website it was decided not to implement this feature as the user can easily select any team quickly from the league table or fixture table.
+    Also, adding this feature would not make any sense as it was decided to remove the My Team link from the navigation bar so the user would have to select
+    a team anyway from the league table or fixtures table to view information on that particular table.
 
 #### Website Owner
-* *"As the owner, I want display data in a clear and informative way that works on any platfrom."*
+* *"As the owner, I want to display data in a clear and informative way that works on any platfrom."*
+    * Carefull consideration was given to the layout of the site and the colour scheme. All tables are made readable on small screen devices by hiding coloums of data
+    that are considered to be secondary infomration.
 
 * *"As the owner, I want the ability to expand the website in the future to add more leagues from the UK and around the world."*
     * The API covers all the major leagues across a wide range of counties so the website can be updated to make use of this data. 

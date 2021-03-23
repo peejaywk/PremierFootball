@@ -43,7 +43,7 @@ The main aims of the website are:
 #### Returning Users
 * As a returning user, I want the website to remember my team selection so I don't have to keep selecting my team each time I visit the site.
 #### Website Owner
-* As the owner, I want display data in a clear and informative way that works on any platfrom.
+* As the owner, I want to display data in a clear and informative way that works on any platfrom.
 * As the owner, I want the ability to expand the website in the future to add more leagues from the UK and around the world.
 * As the owner, I want to minimise calls to the API to keep operating costs to a minimum.
 * As the owner, I want the website to be responsive in design and work across all devices from desktops to mobile phones.
