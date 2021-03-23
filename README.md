@@ -1,5 +1,9 @@
 # Premier Football
 
+[Visit Website](https://peejaywk.github.io/PremierFootball/)
+
+![alt text](/assets/images/am-i-responsive.png "Am I Responsive Image")
+
 Premier Football is a website for football fans who want to keep track of the Premier League and their favourite Premiership football team. The website utilises the [API-FOOTBALL](https://rapidapi.com/api-sports/api/api-football) 
 API for all the football data presented on this site. This API is a freemium service with the basic service allowing 100 requests per day at a maximum rate of 30 requests per minute.
 The main aims of the website are:
