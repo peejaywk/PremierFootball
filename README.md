@@ -134,6 +134,43 @@ Removing a shadow from a button.
 <a name="deployment"></a>
 ## Deployment
 
+<a name="deployment"></a>
+## Deployment
+This project was developed using [GitPod](https://gitpod.io/) with [Github](https://github.com/) used for version control and deployment.
+
+The instructions below detail the steps to deploy this website to GitHub pages:
+
+1. Login to [Github](https://github.com/)
+2. Select **peejaywk/PremierFootball** from the list of repositories.
+3. Select **Settings** from the menu near the top of the screen.
+4. Scroll down to the **GitHub Pages** section.
+5. Under **Source** select the **Master Branch** from the drop-down menu.
+6. The page is automatically refreshed on selecting Master Branch. The website is now deployed to Github pages.
+7. Scroll back down to the **GitHub Pages** section and copy the link to the deployed website. **Note:** it can take several minutes for the site to be deployed by GitHub.
+
+### How to run this project locally
+
+To clone this project into Gitpod you will need the following:
+1. A Github account. Create one [here](https://github.com/).
+2. Installation of Chrome browser.
+
+Then follow the following steps:
+1. Install the [Gitpod Browser Extension](https://www.gitpod.io/docs/browser-extension/) for Chrome.
+2. After instllation, restart the browser.
+3. Log into [Gitpod](https://www.gitpod.io/) using your GitHub credentials.
+4. In Github navigate to the [project repository](https://github.com/peejaywk/PremierFootball).
+5. Click the green "Gitpod" button in the top right corner of the repository.
+6. This will create a new Gitpod workspace from the Github repository for you to work on.
+
+To work on the project within a local IDE follow these steps:
+1. Navigate to the [Github repository](https://github.com/peejaywk/PremierFootball).
+2. At the top of the screen click on the "Code" button.
+3. Fron the drop down menu copy the link in the HTTPS section.
+4. In your local IDE open a terminal window.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type 'git clone' and then paste in the URL copied in Step 3.
+7. Press Enter. This will create a clone within your local IDE.
+
 <a name="credits"></a>
 ## Credits / Resources
 * [W3Schools JavaScript](https://www.w3schools.com/js/default.asp)
