@@ -208,6 +208,12 @@ No errors or warnings found. [CSS Validation Report](W3C-CSS-Validator-Results.p
 ### Lighthouse Report
 Google Lighthouse was used to check the Performance, Accessibility, Best Practices and Search Engine Optimisation of the website.
 The reports for the three pages are linked below.
-* [Lighthouse Report - Home Page](LightHouseReport-Home.pdf)
-* [Lighthouse Report - Team Page](LightHouseReport-Team.pdf)
-* [Lighthouse Report - Contact Page](LightHouseReport-Contact.pdf)
+* [Lighthouse Report - Home Page(Desktop)](LightHouseReport-Home-Desktop.pdf)
+* [Lighthouse Report - Home Page(Mobile)](LightHouseReport-Home-Mobile.pdf)
+* [Lighthouse Report - Team Page(Desktop)](LightHouseReport-Team-Desktop.pdf)
+* [Lighthouse Report - Team Page(Mobile)](LightHouseReport-Team-Mobile.pdf)
+    * This reported a peformance score of 70 when testing for mobile devices which indicates a slow load time for the page. However, when
+    testing the website on an actual mobile device the page loaded quickly with no noticable delay. Therefore, no effort will be made
+    to improve this score unless it becomes an issue at a later date.
+* [Lighthouse Report - Contact Page(Desktop)](LightHouseReport-Contact-Desktop.pdf)
+* [Lighthouse Report - Contact Page(Mobile)](LightHouseReport-Contact-Mobile.pdf)
