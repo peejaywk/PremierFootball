@@ -5,11 +5,9 @@ The test procedures and results are documented below.
 
 The code (HTML/CSS/JS) must also satisfy the requirements of the online validation tools. These are:
 
-[W3C Markup Validation Service](https://validator.w3.org/). Check the markup of web documents.
-
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Check Cascading Style Sheets
-
-[JS Lint](https://jslint.com/). Javascript code quality tool. 
+* [W3C Markup Validation Service](https://validator.w3.org/). Check the markup of web documents.
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Check Cascading Style Sheets
+* [JS Lint](https://jslint.com/). Javascript code quality tool. 
 
 Google Lighthouse should be used to check the Performance, Accessibility, Best Practices and Search Engine Optimisation of the website.  
 
@@ -54,7 +52,7 @@ Google Lighthouse should be used to check the Performance, Accessibility, Best P
     * The website uses the Bootstrap framework that enables a responsive design that works across all devices/screen sizes. Table columns are hidden when viewed 
     on devices with small screens so the data is easily readable.
 
-### Functional Testing
+### Functional/Features Testing
 
 Test-001
 Responsive Design - Test responsiveness of website on Chrome browser 
@@ -203,7 +201,8 @@ Corrected the errors and warnings and repeated the test. No errors and warnings 
 
 ### CSS Validation
 To validate the CSS the online [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used. 
-No errors or warnings found. [CSS Validation Report](W3C-CSS-Validator-Results.pdf)
+* No errors or warnings found. 
+* [CSS Validation Report](W3C-CSS-Validator-Results.pdf)
 
 ### Lighthouse Report
 Google Lighthouse was used to check the Performance, Accessibility, Best Practices and Search Engine Optimisation of the website.
@@ -217,3 +216,5 @@ The reports for the three pages are linked below.
     to improve this score unless it becomes an issue at a later date.
 * [Lighthouse Report - Contact Page(Desktop)](LightHouseReport-Contact-Desktop.pdf)
 * [Lighthouse Report - Contact Page(Mobile)](LightHouseReport-Contact-Mobile.pdf)
+
+### JS Lint Validation
