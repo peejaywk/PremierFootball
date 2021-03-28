@@ -1,5 +1,17 @@
-## Testing Strategy
+## Test Strategy
 
+To ensure the website is fit for purpose all user stories and features documented in the main README.md file are to be tested.
+The test procedures and results are documented below.
+
+The code (HTML/CSS/JS) must also satisfy the requirements of the online validation tools. These are:
+
+[W3C Markup Validation Service](https://validator.w3.org/). Check the markup of web documents.
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Check Cascading Style Sheets
+
+[JS Lint](https://jslint.com/). Javascript code quality tool. 
+
+Google Lighthouse should be used to check the Performance, Accessibility, Best Practices and Search Engine Optimisation of the website.  
 
 ### User Story Testing
 #### New Users
