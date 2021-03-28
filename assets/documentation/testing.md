@@ -1,3 +1,6 @@
+## Testing Strategy
+
+
 ### User Story Testing
 #### New Users
 
@@ -39,4 +42,136 @@
     * The website uses the Bootstrap framework that enables a responsive design that works across all devices/screen sizes. Table columns are hidden when viewed 
     on devices with small screens so the data is easily readable.
 
+### Functional Testing
 
+Test-001
+Responsive Design - Test responsiveness of website on Chrome browser 
+
+1. Open Chrome browser and navigate to: https://peejaywk.github.io/PremierFootball/
+2. Open the developer tools by right clicking on the page and selecting 'Inspect'
+3. On screen sizes >=768 pixels check that all the tables are rendered correctly and that the data is clearly visible.
+4. On screen sizes <768 pixels check that all the content moves into one column (center aligned) and that the tables are re-rendered to display less information.
+5. Click on any team in the league table to open the team page. Repeat the above tests in steps 3 and 4.
+6. Navigate to the contact page by clicking on 'Contact' in the nav bar.
+7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
+8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
+
+Test Result:
+
+Test-002
+Responsive Design - Test responsiveness of website on Firefox browser
+1. Open Firefox browser and navigate to: https://peejaywk.github.io/PremierFootball/
+2. Open the developer tools by right clicking on the page and selecting 'Inspect Element'
+3. On screen sizes >=768 pixels check that all the tables are rendered correctly and that the data is clearly visible.
+4. On screen sizes <768 pixels check that all the content moves into one column (center aligned) and that the tables are re-rendered to display less information.
+5. Click on any team in the league table to open the team page. Repeat the above tests in steps 3 and 4.
+6. Navigate to the contact page by clicking on 'Contact' in the nav bar.
+7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
+8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
+
+Test Result:
+
+Test-003
+Responsive Design - Test responsiveness of website on Opera browser
+1. Open Opera browser and navigate to: https://peejaywk.github.io/PremierFootball/
+2. Open the developer tools by right clicking on the page and selecting 'Inspect element'
+3. On screen sizes >=768 pixels check that all the tables are rendered correctly and that the data is clearly visible.
+4. On screen sizes <768 pixels check that all the content moves into one column (center aligned) and that the tables are re-rendered to display less information.
+5. Click on any team in the league table to open the team page. Repeat the above tests in steps 3 and 4.
+6. Navigate to the contact page by clicking on 'Contact' in the nav bar.
+7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
+8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
+
+Test Result:
+
+Test-004
+Responsive Design - Test responsiveness of website on Microsoft Edge browser
+1. Open Edge browser and navigate to: https://peejaywk.github.io/PremierFootball/
+2. Open the developer tools by right clicking on the page and selecting 'Inspect'
+3. On screen sizes >=768 pixels check that all the tables are rendered correctly and that the data is clearly visible.
+4. On screen sizes <768 pixels check that all the content moves into one column (center aligned) and that the tables are re-rendered to display less information.
+5. Click on any team in the league table to open the team page. Repeat the above tests in steps 3 and 4.
+6. Navigate to the contact page by clicking on 'Contact' in the nav bar.
+7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
+8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
+
+Test Result:
+
+Test-005
+Navigation Links - Test all links are working in the nav bar
+1. Open Chrome browser and navigate to https://peejaywk.github.io/PremierFootball/
+2. Click on the 'Contact' link in the nav bar and check that the contact page is displayed.
+3. Click on the 'Home' link in the nav bar and check you are returned to the Home page.
+4. Click on any team in the league or fixture table and check that the correct team page is opened.
+5. Click on the Home icon on the top left and corner of the page and check you are returned to the Home page.
+6. Repeat tests using Firefox, Opera and Edge browsers.
+7. Repeat tests on mobile device if possible.
+
+Test Result:
+
+Test-006
+Footer Links - Test all links are working in the footer.
+1. Open Chrome browser and navigate to https://peejaywk.github.io/PremierFootball/
+2. Click on each social media link and verify it opens up the correct page in a new browser tab.
+3. Click on the email link and verify that it opens the email client. The response may vary depending on the computer setup.
+4. Repeat tests using Firefox, Opera and Edge browsers.
+5. Repeat tests on mobile device if possible.
+
+Test Result:
+
+Test-007
+Statistics Button - Test that clicking on the 'stats' button opens a modal window on the device.
+1. Open Chrome browser and navigate to https://peejaywk.github.io/PremierFootball/
+2. Click on any team in the league or fixture table to open Team page.
+3. Click on the green 'stats' button and check that the modal window opens.
+4. Check that the team names at the top of the modal match those associated with the 'stats' button in the results table.
+5. Check that the modal can be closed by either clicking on the 'x' or clicking anywhere outside the modal window.
+6. Repeat tests using Firefox, Opera and Edge browsers.
+7. Repeat tests on mobile device if possible.
+
+Test Result:
+
+Test-008
+Contact Form - Test the contact form validation works and the emailJS service has been setup correctly.
+1. Open Chrome browser and navigate to https://peejaywk.github.io/PremierFootball/contact.html
+2. Click on the 'Send' button and check that the form asks you to fill in the name field.
+3. Fill in the name field and click on the 'send' button. Check that the form asks you to fill in the email address field.
+4. Fill in the email field with a valid email address and click on the 'send' button. Check that the form asks you to fill in the subject field. The contact number field is opptional so the form won't prompt you to fill in this field.
+5. Fill in the subject field and click on the 'send' button. Check that the form asks you to fill in the message field.
+6. Fill in the message field and click on the 'send' button. Check that the 'Message Sent Successfully!' modal window is displayed.
+7. Check that the confirmation email has been received at the address given in step 4.
+8. Check that the user message as been received at the website email account (premierfootball.ci@gmail.com).
+9. Repeat tests using Firefox, Opera and Edge browsers.
+10. Repeat tests on mobile device if possible.
+
+Test Result:
+
+Test-009
+Team Links - Test all the team links work from the Home and Team page.
+1. Open Chrome browser and navigate to https://peejaywk.github.io/PremierFootball/
+2. Click on any team in the league or fixture table to open Team page.
+3. Check that the team being displayed corresponds to the link clicked on the Home page.
+4. Check that the correct team is highlighted in the Premier League table.
+5. Click on another team on the Team page and check that the page updates to show information for that team.
+6. Repeat tests using Firefox, Opera and Edge browsers.
+7. Repeat tests on mobile device if possible.
+
+Test Result:
+
+Test-010
+API Data Retrieval - Check that the website only requests data if it is stale or has not been requested before.
+1. Open a new Incognito window in the Chrome browser.
+2. Open the developer tools by right clicking on the page and selecting 'Inspect'
+3. In the developer tools click on the Console in the top menu bar.
+4. Open page https://peejaywk.github.io/PremierFootball/ in the igcognito window.
+5. In the console window check that the website has made 3 calls to request data from the API as the data is stale and has never been read. The correct console log is shown below:
+	
+    ![alt text](images/Test-010-APIDataStale.PNG "API Stale Data")
+6. Reload the page by pressing F5 or by clicking on the reload icon.
+7. In the console log check that the website has not performed any API reads as the data has already been read and stored locally. The correct console log is shown below:
+
+    ![alt text](images/Test-010-APIDataValid.PNG "API Stale Data")
+
+Test Result:
+
+	
