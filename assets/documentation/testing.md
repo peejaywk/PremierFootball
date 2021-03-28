@@ -190,13 +190,13 @@ Test Result:
 To validate the HTML the online [W3C Markup Validation Service](https://validator.w3.org/) was used. Each of the three pages was tested using this online tool.
 
 * Home Page ([W3C Validation Report](Html-Checker-HomePage.pdf))
-No errors or warnings found.
+    * No errors or warnings found.
 
 * Team Page ([W3C Validation Report](Html-Checker-TeamPage.pdf))
-No errors or warnings found.
+    * No errors or warnings found.
 
 * Contact Page ([W3C Validation Report](Html-Checker-ContactPage.pdf))
-The following errors and warnings were found:
+    * The following errors and warnings were found:
 ![alt text](images/HTML-Validator-ContactPageErrors.PNG "Contact Page HTML Errors")
 
 Corrected the errors and warnings and repeated the test. No errors and warnings found.
@@ -208,6 +208,6 @@ No errors or warnings found. [CSS Validation Report](W3C-CSS-Validator-Results.p
 ### Lighthouse Report
 Google Lighthouse was used to check the Performance, Accessibility, Best Practices and Search Engine Optimisation of the website.
 The reports for the three pages are linked below.
-* [Lighthouse Report - Home Page](/assets/documents/testing/LightHouseReport-Index.pdf)
-* [Lighthouse Report - Team Page](/assets/documents/testing/LightHouseReport-About.pdf)
-* [Lighthouse Report - Contact Page](/assets/documents/testing/LightHouseReport-Contact.pdf)
+* [Lighthouse Report - Home Page](LightHouseReport-Home.pdf)
+* [Lighthouse Report - Team Page](LightHouseReport-Team.pdf)
+* [Lighthouse Report - Contact Page](LightHouseReport-Contact.pdf)
