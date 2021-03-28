@@ -186,4 +186,17 @@ API Data Retrieval - Check that the website only requests data if it is stale or
 
 Test Result:
 
-	
+### HTML Validation
+To validate the HTML the online [W3C Markup Validation Service](https://validator.w3.org/) was used. Each of the three pages was tested using this online tool.
+
+#### Home Page ([W3C Validation Report](assets/documents/testing/Html-Checker-HomePage.pdf))
+No errors or warnings found.
+
+#### Team Page ([W3C Validation Report](assets/documents/testing/Html-Checker-TeamPage.pdf))
+No errors or warnings found.
+
+#### Contact Page ([W3C Validation Report](assets/documents/testing/Html-Checker-ContactPage.pdf))
+The following errors and warnings were found:
+![alt text](images/HTML-Validator-ContactPageErrors.PNG "Contact Page HTML Errors")
+
+Corrected the errors and warnings and repeated the test. No errors and warnings found.
