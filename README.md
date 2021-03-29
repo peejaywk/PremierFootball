@@ -180,3 +180,7 @@ To work on the project within a local IDE follow these steps:
 * [Stackoverflow](https://stackoverflow.com/questions/54163952/async-await-in-fetch-how-to-handle-errors) - Handling API errors.
 * [PNG Egg](https://www.pngegg.com/en/png-bakbx) - PNG Egg was used to source the favicon.
 * [Site Point](https://www.sitepoint.com/get-url-parameters-with-javascript/) - Extracting URL parameters using Javascript.
+
+#### Acknowledgements
+* I would like to thank my mentor Adegbenga Adeye for his guidance throughout this project.
+* I would like to thank the members of the Slack community who provided feedback on my project in the #peer-code-review section.

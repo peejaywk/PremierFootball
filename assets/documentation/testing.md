@@ -66,7 +66,10 @@ Responsive Design - Test responsiveness of website on Chrome browser
 7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
 8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
 
-Test Result:
+**Test Result: PASS**
+
+Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Chrome on a Windows machine.
 
 Test-002
 Responsive Design - Test responsiveness of website on Firefox browser
@@ -79,7 +82,10 @@ Responsive Design - Test responsiveness of website on Firefox browser
 7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
 8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
 
-Test Result:
+**Test Result: PASS**
+
+Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Firefox on a Windows machine.
 
 Test-003
 Responsive Design - Test responsiveness of website on Opera browser
@@ -92,7 +98,10 @@ Responsive Design - Test responsiveness of website on Opera browser
 7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
 8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
 
-Test Result:
+**Test Result: PASS **
+
+Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Opera on a Windows machine.
 
 Test-004
 Responsive Design - Test responsiveness of website on Microsoft Edge browser
@@ -105,7 +114,10 @@ Responsive Design - Test responsiveness of website on Microsoft Edge browser
 7. On screen sizes >=578 pixels check the form is displayed correctly and expands as the screen size increases.
 8. On screen sizes <578 pixels check that the form items move into a single column and expand to fill the screen.
 
-Test Result:
+**Test Result: PASS**
+
+Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Edge on a Windows machine.
 
 Test-005
 Navigation Links - Test all links are working in the nav bar
@@ -117,7 +129,10 @@ Navigation Links - Test all links are working in the nav bar
 6. Repeat tests using Firefox, Opera and Edge browsers.
 7. Repeat tests on mobile device if possible.
 
-Test Result:
+**Test Result: PASS**
+
+All nav bars are working and link to the correct pages. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
+Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
 
 Test-006
 Footer Links - Test all links are working in the footer.
@@ -127,7 +142,10 @@ Footer Links - Test all links are working in the footer.
 4. Repeat tests using Firefox, Opera and Edge browsers.
 5. Repeat tests on mobile device if possible.
 
-Test Result:
+**Test Result: PASS**
+
+All social media links are working and link to the correct pages, opening in a new tab. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
+Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
 
 Test-007
 Statistics Button - Test that clicking on the 'stats' button opens a modal window on the device.
@@ -139,7 +157,11 @@ Statistics Button - Test that clicking on the 'stats' button opens a modal windo
 6. Repeat tests using Firefox, Opera and Edge browsers.
 7. Repeat tests on mobile device if possible.
 
-Test Result:
+**Test Result: PASS**
+
+Clicking on the 'stats' button opens the modal window and the correct information is display for the team. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
+Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
+
 
 Test-008
 Contact Form - Test the contact form validation works and the emailJS service has been setup correctly.
@@ -148,13 +170,17 @@ Contact Form - Test the contact form validation works and the emailJS service ha
 3. Fill in the name field and click on the 'send' button. Check that the form asks you to fill in the email address field.
 4. Fill in the email field with a valid email address and click on the 'send' button. Check that the form asks you to fill in the subject field. The contact number field is opptional so the form won't prompt you to fill in this field.
 5. Fill in the subject field and click on the 'send' button. Check that the form asks you to fill in the message field.
-6. Fill in the message field and click on the 'send' button. Check that the 'Message Sent Successfully!' modal window is displayed.
+6. Fill in the message field and click on the 'send' button. Check that the 'Message Sent Successfully!' modal window is displayed and that the form entries are cleared.
 7. Check that the confirmation email has been received at the address given in step 4.
 8. Check that the user message as been received at the website email account (premierfootball.ci@gmail.com).
 9. Repeat tests using Firefox, Opera and Edge browsers.
 10. Repeat tests on mobile device if possible.
 
-Test Result:
+**Test Result: PASS**
+The form validation works for the name, email, subject and message fields. If any of these arn't populated then the user is prompted to 
+complete the field be submitting the form. Once the form had been sent the success modal window appeared and the form data was cleared. The 
+confirmation email was received at the supplied email address and contained all the correct information. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
+Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
 
 Test-009
 Team Links - Test all the team links work from the Home and Team page.
@@ -166,7 +192,10 @@ Team Links - Test all the team links work from the Home and Team page.
 6. Repeat tests using Firefox, Opera and Edge browsers.
 7. Repeat tests on mobile device if possible.
 
-Test Result:
+**Test Result: PASS**
+Clicking on any team on the home page opened up the Team page displaying the information for the selected team. Clicking on another team
+caused the page to update with the new data. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
+Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
 
 Test-010
 API Data Retrieval - Check that the website only requests data if it is stale or has not been requested before.
@@ -182,7 +211,11 @@ API Data Retrieval - Check that the website only requests data if it is stale or
 
     ![alt text](images/Test-010-APIDataValid.PNG "API Stale Data")
 
-Test Result:
+**Test Result: PASS**
+Opened the console in developer tools in a new incognito window. On first loading the site the API was called 3 times requesting new information as the
+data was either stale or had never been requested. On refreshing the page using F5 the API wasn't called as the data stored locally was still valid.
+Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
+Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
 
 ### HTML Validation
 To validate the HTML the online [W3C Markup Validation Service](https://validator.w3.org/) was used. Each of the three pages was tested using this online tool.
