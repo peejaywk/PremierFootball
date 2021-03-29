@@ -5,9 +5,9 @@ var _0x17d6 = ['9811CaACaI', '1323116hMGSjL', '581741oujLdu', '460783NcTkWs', '3
  * Example code to read the API-FOOTBALL API copied from https://rapidapi.com/api-sports/api/api-football/endpoints
  * Modified to add a custom URL and to store the data locally to reduce the number of calls to the API.
  * The data will be updated depending on the value of the 'frequency' term passed in.
- * @param {string} url 
- * @param {string} store_id 
- * @param {number} frequency 
+ * @param {string} url
+ * @param {string} store_id
+ * @param {number} frequency
  */
 async function getData(url, store_id, frequency) {
     // Get current time
@@ -55,7 +55,7 @@ async function getData(url, store_id, frequency) {
 /**
  * Create an inline list containing the teams 'form' for the last 5 games.
  * Adds the appropriate class for win/draw/loss
- * @param {string} formString 
+ * @param {string} formString
  */
 function createFormList(formString) {
     var formList = `<ul class="form-ul">`;
@@ -82,8 +82,8 @@ function createFormList(formString) {
  * Create the Premier League table from the leagueTableData object.
  * Inserts the 'form' list
  * On mobile devices certain columns will be hidden to enable the table to fit on the page.
- * @param {Object} leagueTableData 
- * @param {string} league_id 
+ * @param {Object} leagueTableData
+ * @param {string} league_id
  * @param {string} team_id
  */
 function updateLeagueTable(leagueTableData, league_id, team_id) {
@@ -102,7 +102,7 @@ function updateLeagueTable(leagueTableData, league_id, team_id) {
         <td class="d-none d-md-table-cell" data-bs-toggle="tooltip" title="Goals Against">GA</td>
         <td class="d-none d-md-table-cell" data-bs-toggle="tooltip" title="Goal Difference">GD</td>
         <td>Points</td>
-    </tr>`
+    </tr>`;
 
     $.each(leagueTableData.api.standings[0], function (index, value) {
         // Add the row-highlight class if the team names match. Used to highlight the team
@@ -124,7 +124,7 @@ function updateLeagueTable(leagueTableData, league_id, team_id) {
             <td class="d-none d-md-table-cell">${value.all.goalsAgainst}</td>
             <td class="d-none d-md-table-cell">${value.goalsDiff}</td>
             <td>${value.points}</td>
-        </tr>`
+        </tr>`;
     });
 
     leagueTable += `</table>`;

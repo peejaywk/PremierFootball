@@ -209,7 +209,7 @@ API Data Retrieval - Check that the website only requests data if it is stale or
 6. Reload the page by pressing F5 or by clicking on the reload icon.
 7. In the console log check that the website has not performed any API reads as the data has already been read and stored locally. The correct console log is shown below:
 
-    ![alt text](images/Test-010-APIDataValid.PNG "API Stale Data")
+    ![alt text](images/Test-010-APIDataValid.PNG "API Valid Data")
 
 **Test Result: PASS**
 Opened the console in developer tools in a new incognito window. On first loading the site the API was called 3 times requesting new information as the

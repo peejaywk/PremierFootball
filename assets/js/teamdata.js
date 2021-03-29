@@ -1,6 +1,6 @@
 /**
  * Create the html for the team page. Contains the team logo and general info on the team.
- * @param {Object} teamData 
+ * @param {Object} teamData
  */
 function updateTeamInfo(teamData) {
     return `
@@ -28,13 +28,13 @@ function updateTeamInfo(teamData) {
             <div class="inline-block title-text">Capacity:</div>
             <div class="inline-block info-text">${teamData.api.teams[0].venue_capacity}</div>
         </div>
-    `
+    `;
 }
 
 /**
  * Update the team results table
  * Adds the 'stats' button to the table which calls the modal window
- * @param {Object} resultsData 
+ * @param {Object} resultsData
  */
 function updateResultsTable(resultsData) {
     var resultsTable = `<table class="fixture-table">`;
@@ -48,7 +48,7 @@ function updateResultsTable(resultsData) {
         <td class="d-none d-md-table-cell"></td>
         <td>Away Team</td>
         <td></td>
-     </tr>`
+     </tr>`;
 
     //Loop through each fixture to generate the results table for the team.
     $.each(resultsData.api.fixtures, function (index, value) {
@@ -65,7 +65,7 @@ function updateResultsTable(resultsData) {
             <td class="d-none d-md-table-cell"><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td class="table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
             <td><button type="button" class="btn btn-primary shadow-none btn-stats" onClick="statsButtonClicked(${value.fixture_id},'${value.homeTeam.team_name}','${value.awayTeam.team_name}')">stats</button></td>
-        </tr>`
+        </tr>`;
     });
     resultsTable += `</table>`;
     // Add the html to create the template for the modal.
@@ -89,7 +89,7 @@ function updateResultsTable(resultsData) {
 
 /**
  * Update the team fixtures table
- * @param {Object} teamFixturesData 
+ * @param {Object} teamFixturesData
  */
 function updateTeamFixturesTable(teamFixturesData) {
     var teamFixtureTable = `<table class="fixture-table">`;
@@ -101,23 +101,24 @@ function updateTeamFixturesTable(teamFixturesData) {
         <td class="d-none d-md-table-cell"></td>
         <td>Away Team</td>
         <td>Kickoff</td>
-    </tr>`
+    </tr>`;
 
     // Loop through the fixtures table and generate the table
     $.each(teamFixturesData.api.fixtures, function (index, value) {
         //Convert the event date into more user friendly format (Fri, 19 March 2021)
         var fixtureDate = new Date(value.event_date);
-        const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+        const options1 = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+        const options2 = { hour: '2-digit', minute: '2-digit' };
 
         teamFixtureTable += `
         <tr class="table-text">
-            <td>${fixtureDate.toLocaleDateString('en-GB', options)}</td>
+            <td>${fixtureDate.toLocaleDateString('en-GB', options1)}</td>
             <td class="d-none d-md-table-cell"><img src="${value.homeTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td class="table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.homeTeam.team_id}">${value.homeTeam.team_name}</a></td>
             <td class="d-none d-md-table-cell"><img src="${value.awayTeam.logo}" width="20" height="20" alt="Home Team Logo"></td>
             <td class="table-teamname"><a href="team.html?league_id=${value.league_id}&team_id=${value.awayTeam.team_id}">${value.awayTeam.team_name}</a></td>
-             <td>${fixtureDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</td>
-        </tr>`
+             <td>${fixtureDate.toLocaleTimeString('en-GB', options2)}</td>
+        </tr>`;
     });
     teamFixtureTable += `</table>`;
     return teamFixtureTable;
@@ -126,15 +127,15 @@ function updateTeamFixturesTable(teamFixturesData) {
 /**
  * Request the statistics for the given fixture_id and update the contents of the modal window
  * Team names are passed in so they can also be displayed in the window
- * @param {string} fixture_id 
- * @param {string} home_team 
- * @param {string} away_team 
+ * @param {string} fixture_id
+ * @param {string} home_team
+ * @param {string} away_team
  */
 function statsButtonClicked(fixture_id, home_team, away_team) {
     var oneDay = 1 * 24 * 60 * 60 * 1000;
     var url = "v2/statistics/fixture/" + fixture_id;
 
-    getData(url, 'fixture' + fixture_id, oneDay).then(data => {
+    getData(url, 'fixture' + fixture_id, oneDay).then((data) => {
         // Wait for the API data to return then update the modal html.
         // Replace any null parameters with 0
         var red_card_home = data.api.statistics["Red Cards"].home == null ? 0 : data.api.statistics["Red Cards"].home;
@@ -209,8 +210,8 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
 
 /**
  * Create the ul containing the form of the current team being displayed.
- * @param {Object} leagueData 
- * @param {string} team_id 
+ * @param {Object} leagueData
+ * @param {string} team_id
  */
 function updateTeamForm(leagueData, team_id) {
     var teamFormList = '';
@@ -248,19 +249,19 @@ $(document).ready(function () {
 
     // Request the team data from the API
     var url = "v2/teams/team/" + team_id;
-    getData(url, 'team' + team_id, oneDay).then(data => {
+    getData(url, 'team' + team_id, oneDay).then((data) => {
         $("#team-info").html(updateTeamInfo(data));
     });
 
     // Request the last 5 results for the team from the API
     url = "v2/fixtures/team/" + team_id + "/last/5";
-    getData(url, 'fixtures' + team_id, oneDay).then(data => {
+    getData(url, 'fixtures' + team_id, oneDay).then((data) => {
         $("#results-table").html(updateResultsTable(data));
     });
 
     // Request the next 5 fixtures for the team from the API
     url = "v2/fixtures/team/" + team_id + "/next/5";
-    getData(url, 'nextfixtures' + team_id, oneDay).then(data => {
+    getData(url, 'nextfixtures' + team_id, oneDay).then((data) => {
         $("#team-fixtures-table").html(updateTeamFixturesTable(data));
     });
 
@@ -273,7 +274,7 @@ $(document).ready(function () {
     // Request the league data again but this time extract the form of the team being displayed
     // There is no other way to get the team form from the API so the league table has to be requested again (it will be stored locally however)
     url = "v2/leagueTable/" + league_id;
-    getData(url, 'table', oneDay).then(data => {
+    getData(url, 'table', oneDay).then((data) => {
         $("#team-form").html(updateTeamForm(data, team_id));
     });
 });
