@@ -120,6 +120,7 @@ is #3D185C. The following color scheme was chosen from the [Colorate](https://co
 * [Obfustcator](https://obfuscator.io/). Obfustcator for JavaScript
 * [Colorate](https://colorate.azurewebsites.net/). Colour scheme design website.
 * [JS Lint](https://jslint.com/). Javascript code quality tool.
+* [emailJS](https://www.emailjs.com/). Send email directly from JavaScript.
 
 <a name="testing"></a>
 ## Testing
@@ -133,6 +134,9 @@ Code used to move the footer to the bottom of the screen (not fixed).
 
 Removing a shadow from a button.
 [Stackoverflow](https://stackoverflow.com/questions/39210985/remove-button-shadow)
+
+To minimise API calls the website only allows the data for the home page or team to be refreshed every 24 hours. This can easliy be modified to
+reduce the time or to remove the time limit completely. 
 
 <a name="deployment"></a>
 ## Deployment
