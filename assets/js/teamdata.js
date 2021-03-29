@@ -138,10 +138,10 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
     getData(url, 'fixture' + fixture_id, oneDay).then((data) => {
         // Wait for the API data to return then update the modal html.
         // Replace any null parameters with 0
-        var red_card_home = data.api.statistics["Red Cards"].home == null ? 0 : data.api.statistics["Red Cards"].home;
-        var red_card_away = data.api.statistics["Red Cards"].away == null ? 0 : data.api.statistics["Red Cards"].away;
-        var yellow_card_home = data.api.statistics["Yellow Cards"].home == null ? 0 : data.api.statistics["Yellow Cards"].home;
-        var yellow_card_away = data.api.statistics["Yellow Cards"].away == null ? 0 : data.api.statistics["Yellow Cards"].away;
+        var red_card_home = (data.api.statistics["Red Cards"].home == null ? 0 : data.api.statistics["Red Cards"].home);
+        var red_card_away = (data.api.statistics["Red Cards"].away == null ? 0 : data.api.statistics["Red Cards"].away);
+        var yellow_card_home = (data.api.statistics["Yellow Cards"].home == null ? 0 : data.api.statistics["Yellow Cards"].home);
+        var yellow_card_away = (data.api.statistics["Yellow Cards"].away == null ? 0 : data.api.statistics["Yellow Cards"].away);
 
         $('#modal-teamid').html(`
             <table class="league-table">
@@ -149,7 +149,7 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
                     <td></td>
                     <td>Home</td>
                     <td>Away</td>
-                </tr>    
+                </tr>
                 <tr class="table-text">
                     <td>Ball Possession</td>
                     <td>${data.api.statistics["Ball Possession"].home}</td>
@@ -162,8 +162,8 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
                 </tr>
                 <tr class="table-text">
                     <td>Fouls</td>
-                    <td>${data.api.statistics["Fouls"].home}</td>
-                    <td>${data.api.statistics["Fouls"].away}</td>
+                    <td>${data.api.statistics.Fouls.home}</td>
+                    <td>${data.api.statistics.Fouls.away}</td>
                 </tr>
                 <tr class="table-text">
                     <td>Goal Keeper Saves</td>
@@ -172,8 +172,8 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
                 </tr>
                 <tr class="table-text">
                     <td>Offsides</td>
-                    <td>${data.api.statistics["Offsides"].home}</td>
-                    <td>${data.api.statistics["Offsides"].away}</td>
+                    <td>${data.api.statistics.Offsides.home}</td>
+                    <td>${data.api.statistics.Offsides.away}</td>
                 </tr>
                 <tr class="table-text">
                     <td>Passes %</td>
@@ -199,8 +199,8 @@ function statsButtonClicked(fixture_id, home_team, away_team) {
                     <td>Shots on Goal</td>
                     <td>${data.api.statistics["Shots on Goal"].home}</td>
                     <td>${data.api.statistics["Shots on Goal"].away}</td>
-                </tr>     
-            </table>  
+                </tr>
+            </table>
         `
         );
     });
@@ -219,13 +219,14 @@ function updateTeamForm(leagueData, team_id) {
         // Generate the team form 'ul' for the selected team only
         if (value.team_id == team_id) {
             teamFormList = `<ul class="form-ul-lg">`;
-            for (var i = 0; i < value.forme.length; i++) {
+            var i;
+            for (i = 0; i < value.forme.length; i++) {
                 if (value.forme[i] == 'W' || value.forme[i] == 'w') {
-                    teamFormList += `<li class="form-li-lg form-li-won">${value.forme[i]}</li>`
+                    teamFormList += `<li class="form-li-lg form-li-won">${value.forme[i]}</li>`;
                 } else if (value.forme[i] == 'L' || value.forme[i] == 'l') {
-                    teamFormList += `<li class="form-li-lg form-li-lost">${value.forme[i]}</li>`
+                    teamFormList += `<li class="form-li-lg form-li-lost">${value.forme[i]}</li>`;
                 } else {
-                    teamFormList += `<li class="form-li-lg form-li-draw">${value.forme[i]}</li>`
+                    teamFormList += `<li class="form-li-lg form-li-draw">${value.forme[i]}</li>`;
                 }
             }
             teamFormList += `</ul>`;
@@ -267,7 +268,7 @@ $(document).ready(function () {
 
     // Request the league standings from the API
     url = "v2/leagueTable/" + league_id;
-    getData(url, 'table', oneDay).then(data => {
+    getData(url, 'table', oneDay).then((data) => {
         $("#league-table").html(updateLeagueTable(data, league_id, team_id));
     });
 
