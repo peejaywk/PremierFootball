@@ -18,26 +18,25 @@ async function getData(url, store_id, frequency) {
     if (localStorage.getItem('timeDataLastRead' + store_id) != null) {
         timeDataLastRead = localStorage.getItem('timeDataLastRead' + store_id);
     }
-    
     // If the data has expired the read the API - else retrieve from local storage
     if (timeNow >= parseInt(timeDataLastRead) + parseInt(frequency)) {
         const MY_API = myAPIKey();
         console.log('Data is stale so perform an API read.');
-        let response = await fetch("https://api-football-v1.p.rapidapi.com/" + url, {
+        var response = await fetch("https://api-football-v1.p.rapidapi.com/" + url, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": `${MY_API}`,
                 "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
             }
-        }).then(result => {
+        }).then((result) => {
             // CREDIT: https://stackoverflow.com/questions/54163952/async-await-in-fetch-how-to-handle-errors
             // Check for other errors that won't be handled by the .catch
-            // Fetch only detects network errors          
+            // Fetch only detects network errors
             if (result.status >= 400 && result.status < 600) {
                 throw new Error("Bad repsonse from server");
             }
             return result.json();
-        }).catch(error => {
+        }).catch((error) => {
             console.log("Error:", error);
         });
 
@@ -46,8 +45,8 @@ async function getData(url, store_id, frequency) {
         return response;
     } else {
         console.log('Data is valid. No API call required.');
-        let response = await JSON.parse(localStorage.getItem('localData' + store_id));
-        let data = await response;
+        var response = await JSON.parse(localStorage.getItem('localData' + store_id));
+        var data = await response;
         return data;
     }
 }
@@ -59,7 +58,8 @@ async function getData(url, store_id, frequency) {
  */
 function createFormList(formString) {
     var formList = `<ul class="form-ul">`;
-    for (var i = 0; i < formString.length; i++) {
+    var i;
+    for (i = 0; i < formString.length; i++) {
         if (formString[i] == 'W' || formString[i] == 'w') {
             formList += `
                 <li class="form-li form-li-won">${formString[i]}</li>
@@ -108,7 +108,6 @@ function updateLeagueTable(leagueTableData, league_id, team_id) {
         // Add the row-highlight class if the team names match. Used to highlight the team
         // in the league table when displayed on the team page.
         var teamHighlight = value.team_id==team_id ? 'row-highlight' : '';
-        
         var formList = createFormList(value.forme);
         leagueTable += `
         <tr class="table-text ${teamHighlight}">

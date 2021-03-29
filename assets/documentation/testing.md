@@ -251,3 +251,11 @@ The reports for the three pages are linked below.
 * [Lighthouse Report - Contact Page(Mobile)](LightHouseReport-Contact-Mobile.pdf)
 
 ### JS Lint Validation
+
+The three JavaScript files were checked using the online linting tool [JSLint](https://jslint.com/). The tool highlighted some minor issues with 
+the syntax and the code has been modified to correct these. There are still some warnings that have not been addressed and these can be seen in the
+PDF's below:
+
+* JSLint results for [script.js](JSLint-script.pdf)
+* JSLint results for [apifootball.js](JSLint-apifootball.pdf)
+* JSLint results for [teamdata.js](JSLint-teamdata.pdf)
