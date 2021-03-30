@@ -261,3 +261,4 @@ PDF's below:
 * JSLint results for [script.js](JSLint-script.pdf)
 * JSLint results for [apifootball.js](JSLint-apifootball.pdf)
 * JSLint results for [teamdata.js](JSLint-teamdata.pdf)
+* JSLint results fro [cotact-email.js](JSLint-email.pdf)

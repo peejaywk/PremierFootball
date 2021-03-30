@@ -187,6 +187,7 @@ To work on the project within a local IDE follow these steps:
 * [Stackoverflow](https://stackoverflow.com/questions/54163952/async-await-in-fetch-how-to-handle-errors) - Handling API errors.
 * [PNG Egg](https://www.pngegg.com/en/png-bakbx) - PNG Egg was used to source the favicon.
 * [Site Point](https://www.sitepoint.com/get-url-parameters-with-javascript/) - Extracting URL parameters using Javascript.
+* The Code Institue UCD Resume project was referenced to setup the emailJS service.
 
 #### Acknowledgements
 * I would like to thank my mentor Adegbenga Adeye for his guidance throughout this project.
