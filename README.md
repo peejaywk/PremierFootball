@@ -61,16 +61,17 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
 ### Common Features Across All pages
 * Header
     * The header will be in a fixid position at the top of the screen and will not scroll with the page contents. This allows visitors easy access to navigate the site via the menu.
-    * The header will include links to all the site pages. These will be aligned to the right hand side of the page.
+    * The header will include links to all the site pages. These will be aligned to the left hand side of the page.
     * On hovering over the navigation links with the mouse they will change colour indicating to the user that they are clickable (desktop only).
-    * On mobile devidews the navigation links will be clearly visible at the top of the screen so the user can easily switch between team and league views.
+    * On mobile devices the navigation links will be clearly visible at the top of the screen so the user can easily switch between team and league views.
     * The site logo will be positioned to the left of the page and when cliked will take the user back to the home page.
 * Footer
     * The footer will be located at the bottom of each page and will scroll with the page contents.
-    * A disclaimer will be positioned to the left of the footer stating that this website is for educational purposes only.
+    * A disclaimer will be positioned in the footer stating that this website is for educational purposes only.
     * Social media links and other contact information will be positioned to the right of the footer.
     * Social media links will be represented by icons for each site and will increase when the user hovers over them.
     * There will be a contact link at the bottom of the page that will take the user to the contact page/form.
+        * It was decided not to add a button in the footer that links to the Contact page as this page is easily accessible via the link in the nav bar.
     * There will be a reference to the [API-FOOTBALL](https://rapidapi.com/api-sports/api/api-football) website indicating to the user the source of the data used on the website.
 
 ### Individual Page Features
@@ -80,8 +81,10 @@ The website is split into two pages - Home and Contact. Initial design ideas wer
     * A list of upcoming fixtures will be dispalyed next to the logo on desktop and tablet devices and below the logo on mobile devices.
     * Below this will be the league table for the Premier League.
     * Clicking on any of the team names on the page will open a modal window containing information on that particular team.
+        * This was changed to open in a new page instead of a modal window.
 * My Team Page
     * On first visiting this page the user will be asked to select a team from a dropdown menu. This will be remember for future visits and can also be changed if required.
+        * Did not implement this as all the teams are clearly visible from the Home page and it didn't make for a satisfactory UX.
     * The My Team page will have a similar layout to that of the Home page to keep a consistent feel across the site.
     * The page will display details of the selected team at the top of the page with the teams logo positioned to the left. 
     * A list of upcoming fixtures for the selected team will be displayed next to the logo on desktop and tablet devices and below the logo on mobile devices.
@@ -110,7 +113,7 @@ is #3D185C. The following color scheme was chosen from the [Colorate](https://co
 
 <a name="technologies"></a>
 ## Technologies Used
-* This website uses HTML and CSS programming languages.
+* This website uses HTML, CSS & JavaScript programming languages.
 * [Bootstrap 5.0.0 beta2](https://getbootstrap.com/)
 * [GitPod](https://gitpod.io/) was use as the development environment.
 * [GitHub](https://github.com/) was used for configuration control and to host the website.
@@ -129,7 +132,7 @@ See [testing.md](assets/documentation/testing.md) for the testing documentation.
 
 <a name="bugs"></a>
 ## Bugs / Issues
-Code used to move the footer to the bottom of the screen (not fixed).
+Code used to move the footer to the bottom of the screen without it being fixed in placenot.
 [Stackoverflow](https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221)
 
 Removing a shadow from a button.

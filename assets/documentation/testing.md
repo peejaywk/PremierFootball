@@ -147,6 +147,8 @@ Footer Links - Test all links are working in the footer.
 All social media links are working and link to the correct pages, opening in a new tab. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
 Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
 
+It was decided not to add a button in the footer that links to the Contact page as this page is easily accessible via the link in the nav bar.
+
 Test-007
 Statistics Button - Test that clicking on the 'stats' button opens a modal window on the device.
 1. Open Chrome browser and navigate to https://peejaywk.github.io/PremierFootball/
