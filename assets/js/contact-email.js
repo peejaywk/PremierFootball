@@ -1,4 +1,5 @@
 function sendMail(contactForm) {
+    // Extract information for the email from the contact form.
     emailjs.send('service_6txdjqc', 'premier-football', {
         "from_name": contactForm.name.value,
         "from_email": contactForm.emailaddress.value,
@@ -7,12 +8,12 @@ function sendMail(contactForm) {
         "contact-message": contactForm.message.value
     })
     .then(
-        function(response) {
+        function(response) { // If email sent successfully then open modal
             console.log("SUCCESS", response);
             $('#success-modal').modal('show');
             contactForm.reset();
         },
-        function(error) {
+        function(error) { // If emailed failed to send then log to console.
             console.log("FAILED", error);
         });
     
