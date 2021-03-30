@@ -284,6 +284,11 @@ label {
     border-color: #599927;
     
 }
+
+.btn-contact:disabled {
+    background-color: #8fd858;
+    border-color: #8fd858;
+}
 /*---------- Footer Items ----------*/
 .footer-section {
     text-align: center;
