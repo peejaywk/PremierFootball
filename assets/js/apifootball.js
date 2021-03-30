@@ -21,7 +21,6 @@ async function getData(url, store_id, frequency) {
     // If the data has expired the read the API - else retrieve from local storage
     if (timeNow >= parseInt(timeDataLastRead) + parseInt(frequency)) {
         const MY_API = myAPIKey();
-        console.log('Data is stale so perform an API read.');
         var response = await fetch("https://api-football-v1.p.rapidapi.com/" + url, {
             "method": "GET",
             "headers": {
@@ -37,14 +36,13 @@ async function getData(url, store_id, frequency) {
             }
             return result.json();
         }).catch((error) => {
-            console.log("Error:", error);
+            alert("API Error:", error);
         });
 
         localStorage.setItem('localData' + store_id, JSON.stringify(response));
         localStorage.setItem('timeDataLastRead' + store_id, timeNow);
         return response;
     } else {
-        console.log('Data is valid. No API call required.');
         var response = await JSON.parse(localStorage.getItem('localData' + store_id));
         var data = await response;
         return data;
