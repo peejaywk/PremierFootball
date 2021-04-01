@@ -299,6 +299,10 @@ label {
     background-color: #583973;
 }
 
+.footer-text {
+    font-size: 0.9rem;
+}
+
 .email-link {
     color: #EBE7EE;
 }
