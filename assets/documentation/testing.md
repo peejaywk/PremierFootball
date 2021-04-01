@@ -17,7 +17,7 @@ Google Lighthouse should be used to check the Performance, Accessibility, Best P
 * *"As a user, I want to easily find my team so I can stay up to date on fixtures and results."*
     * All the current Premier League teams are listed in the league table on the home page allowing the user to select their team. Clicking any team name
 	on the home page will open a dedicated page to that team that will list previous results and upcoming fixtures for that team.
-* *"As a user, I want to see a list of up coming fixtures with location and kick-off times so I can plan ahead."*
+* *"As a user, I want to see a list of upcoming fixtures with location and kick-off times so I can plan ahead."*
     * The team page lists all upcoming fixtures with dates and kickoff times. The address of the home team is also displayed on the page below the team logo.
 * *"As a user, I want to see the latest form of my team."*
     * The team page shows the form of the team covering the last five games. These are colour coded to show wins, losses and draws.
@@ -36,10 +36,9 @@ Google Lighthouse should be used to check the Performance, Accessibility, Best P
     a team anyway from the league table or fixtures table to view information on that particular table.
 
 #### Website Owner
-* *"As the owner, I want to display data in a clear and informative way that works on any platfrom."*
-    * Carefull consideration was given to the layout of the site and the colour scheme. All tables are made readable on small screen devices by hiding coloums of data
-    that are considered to be secondary infomration.
-
+* *"As the owner, I want to display data in a clear and informative way that works on any platform."*
+    * Careful consideration was given to the layout of the site and the colour scheme. All tables are made readable on small screen devices by hiding coloumns of data
+    that are considered to be secondary information.
 * *"As the owner, I want the ability to expand the website in the future to add more leagues from the UK and around the world."*
     * The API covers all the major leagues across a wide range of counties so the website can be updated to make use of this data. 
     The API call function can accept any URL so	can be used to retrieve data for any league in any country. There are no 'hard coded' league / club names 
@@ -47,7 +46,7 @@ Google Lighthouse should be used to check the Performance, Accessibility, Best P
 * *"As the owner, I want to minimise calls to the API to keep operating costs to a minimum."*
     * A custom function has been written to retrieve the API data. Any data read by the API function will be stored locally within the browser so next the data 
     is requested no API call is required as the data can be obtained from local storage. However, if the data is stale then the API will request new data and 
-    update the local storage. The expiration time of the data is determinied by a parameter passed into the function - this can be anything from a few minutes to a few days.
+    update the local storage. The expiration time of the data is determined by a parameter passed into the function - this can be anything from a few minutes to a few days.
 * *"As the owner, I want the website to be responsive in design and work across all devices from desktops to mobile phones."*
     * The website uses the Bootstrap framework that enables a responsive design that works across all devices/screen sizes. Table columns are hidden when viewed 
     on devices with small screens so the data is easily readable.
@@ -68,7 +67,7 @@ Responsive Design - Test responsiveness of website on Chrome browser
 
 **Test Result: PASS**
 
-Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+Tables are displayed correctly on mobile devices and expand for larger screen devices. On mobile devices the contact form is displayed as a single
 column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Chrome on a Windows machine.
 
 Test-002
@@ -84,7 +83,7 @@ Responsive Design - Test responsiveness of website on Firefox browser
 
 **Test Result: PASS**
 
-Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+Tables are displayed correctly on mobile devices and expand for larger screen devices. On mobile devices the contact form is displayed as a single
 column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Firefox on a Windows machine.
 
 Test-003
@@ -100,7 +99,7 @@ Responsive Design - Test responsiveness of website on Opera browser
 
 **Test Result: PASS **
 
-Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+Tables are displayed correctly on mobile devices and expand for larger screen devices. On mobile devices the contact form is displayed as a single
 column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Opera on a Windows machine.
 
 Test-004
@@ -116,7 +115,7 @@ Responsive Design - Test responsiveness of website on Microsoft Edge browser
 
 **Test Result: PASS**
 
-Tables are displayed correctly on mobile devices and exapand for larger screen devices. On mobile devices the contact form is displayed as a single
+Tables are displayed correctly on mobile devices and expand for larger screen devices. On mobile devices the contact form is displayed as a single
 column and changes to two columns wide on screen sizes above 568 pixels. Tests performed using Edge on a Windows machine.
 
 Test-005
@@ -132,7 +131,7 @@ Navigation Links - Test all links are working in the nav bar
 **Test Result: PASS**
 
 All nav bars are working and link to the correct pages. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
-Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
+Samsung Galaxy S8 with Chrome and an Apple iPhone 11 with Safari.
 
 Test-006
 Footer Links - Test all links are working in the footer.
@@ -145,7 +144,7 @@ Footer Links - Test all links are working in the footer.
 **Test Result: PASS**
 
 All social media links are working and link to the correct pages, opening in a new tab. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
-Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
+Samsung Galaxy S8 with Chrome and an Apple iPhone 11 with Safari.
 
 It was decided not to add a button in the footer that links to the Contact page as this page is easily accessible via the link in the nav bar.
 
@@ -162,7 +161,7 @@ Statistics Button - Test that clicking on the 'stats' button opens a modal windo
 **Test Result: PASS**
 
 Clicking on the 'stats' button opens the modal window and the correct information is display for the team. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
-Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
+Samsung Galaxy S8 with Chrome and an Apple iPhone 11 with Safari.
 
 
 Test-008
@@ -170,19 +169,19 @@ Contact Form - Test the contact form validation works and the emailJS service ha
 1. Open Chrome browser and navigate to https://peejaywk.github.io/PremierFootball/contact.html
 2. Click on the 'Send' button and check that the form asks you to fill in the name field.
 3. Fill in the name field and click on the 'send' button. Check that the form asks you to fill in the email address field.
-4. Fill in the email field with a valid email address and click on the 'send' button. Check that the form asks you to fill in the subject field. The contact number field is opptional so the form won't prompt you to fill in this field.
+4. Fill in the email field with a valid email address and click on the 'send' button. Check that the form asks you to fill in the subject field. The contact number field is optional so the form won't prompt you to fill in this field.
 5. Fill in the subject field and click on the 'send' button. Check that the form asks you to fill in the message field.
 6. Fill in the message field and click on the 'send' button. Check that the 'Message Sent Successfully!' modal window is displayed and that the form entries are cleared.
 7. Check that the confirmation email has been received at the address given in step 4.
-8. Check that the user message as been received at the website email account (premierfootball.ci@gmail.com).
+8. Check that the user message has been received at the website email account (premierfootball.ci@gmail.com).
 9. Repeat tests using Firefox, Opera and Edge browsers.
 10. Repeat tests on mobile device if possible.
 
 **Test Result: PASS**
-The form validation works for the name, email, subject and message fields. If any of these arn't populated then the user is prompted to 
+The form validation works for the name, email, subject and message fields. If any of these aren't populated then the user is prompted to 
 complete the field be submitting the form. Once the form had been sent the success modal window appeared and the form data was cleared. The 
 confirmation email was received at the supplied email address and contained all the correct information. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
-Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
+Samsung Galaxy S8 with Chrome and an Apple iPhone 11 with Safari.
 
 Test-009
 Team Links - Test all the team links work from the Home and Team page.
@@ -197,14 +196,14 @@ Team Links - Test all the team links work from the Home and Team page.
 **Test Result: PASS**
 Clicking on any team on the home page opened up the Team page displaying the information for the selected team. Clicking on another team
 caused the page to update with the new data. Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
-Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
+Samsung Galaxy S8 with Chrome and an Apple iPhone 11 with Safari.
 
 Test-010
 API Data Retrieval - Check that the website only requests data if it is stale or has not been requested before.
 1. Open a new Incognito window in the Chrome browser.
 2. Open the developer tools by right clicking on the page and selecting 'Inspect'
 3. In the developer tools click on the Console in the top menu bar.
-4. Open page https://peejaywk.github.io/PremierFootball/ in the igcognito window.
+4. Open page https://peejaywk.github.io/PremierFootball/ in the incognito window.
 5. In the console window check that the website has made 3 calls to request data from the API as the data is stale and has never been read. The correct console log is shown below:
 	
     ![alt text](images/Test-010-APIDataStale.PNG "API Stale Data")
@@ -217,7 +216,9 @@ API Data Retrieval - Check that the website only requests data if it is stale or
 Opened the console in developer tools in a new incognito window. On first loading the site the API was called 3 times requesting new information as the
 data was either stale or had never been requested. On refreshing the page using F5 the API wasn't called as the data stored locally was still valid.
 Tested using Chrome, Firefox, Opera and Edge on a Windows machine. Also tested on a 
-Samsung Galaxy S8 with Chrome and an Appple iPhone 11 with Safari.
+Samsung Galaxy S8 with Chrome and an Apple iPhone 11 with Safari.
+
+*NOTE: No tests were performed using the macOS Operating System as this platform wasn't available at the time of testing*
 
 ### HTML Validation
 To validate the HTML the online [W3C Markup Validation Service](https://validator.w3.org/) was used. Each of the three pages was tested using this online tool.
@@ -246,8 +247,8 @@ The reports for the three pages are linked below.
 * [Lighthouse Report - Home Page(Mobile)](LightHouseReport-Home-Mobile.pdf)
 * [Lighthouse Report - Team Page(Desktop)](LightHouseReport-Team-Desktop.pdf)
 * [Lighthouse Report - Team Page(Mobile)](LightHouseReport-Team-Mobile.pdf)
-    * This reported a peformance score of 70 when testing for mobile devices which indicates a slow load time for the page. However, when
-    testing the website on an actual mobile device the page loaded quickly with no noticable delay. Therefore, no effort will be made
+    * This reported a performance score of 70 when testing for mobile devices which indicates a slow load time for the page. However, when
+    testing the website on an actual mobile device the page loaded quickly with no noticeable delay. Therefore, no effort will be made
     to improve this score unless it becomes an issue at a later date.
 * [Lighthouse Report - Contact Page(Desktop)](LightHouseReport-Contact-Desktop.pdf)
 * [Lighthouse Report - Contact Page(Mobile)](LightHouseReport-Contact-Mobile.pdf)
@@ -261,4 +262,4 @@ PDF's below:
 * JSLint results for [script.js](JSLint-script.pdf)
 * JSLint results for [apifootball.js](JSLint-apifootball.pdf)
 * JSLint results for [teamdata.js](JSLint-teamdata.pdf)
-* JSLint results fro [cotact-email.js](JSLint-email.pdf)
+* JSLint results for [cotact-email.js](JSLint-email.pdf)
